@@ -37,4 +37,44 @@ Once you have the requirements installed you can check your datafeed like this:
 	$> python ./check.py my_catalog.xml
 
 
-
+	```xml
+	<?xml version="1.0" encoding="UTF-8"?>
+	<catalog>
+	  <provider>
+	    <name>CrossKnowledge Library</name>
+	    <description>Content from LCMS Content</description>
+	    <picture>http://example.ck/crossknowledge.gif</picture>
+	    <behaveLikeCrossKnowledge>true</behaveLikeCrossKnowledge>
+	    <defaultThumbnail>
+	      <content>crossknowledge.gif</content>
+	    </defaultThumbnail>
+	  </provider>
+	  <contents>
+	    <content>
+	      <refId>OJMH390</refId>
+	      <refIdVersion>OJMH390</refIdVersion>
+	      <title>تقديم تعليقات بناءة</title>
+	      <locale></locale>
+	      <summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
+	      <type>Interactive</type>
+	      <subtype>Session</subtype>
+	      <runtime>C</runtime>
+	      <thumbnail></thumbnail>
+	      <url>OJMH390</url>
+	      <alternateUrl>OJMH390</alternateUrl>
+	      <tags>
+		<tag>SKILLS_MANAGEMENT</tag>
+		<tag>TRAINING</tag>
+		<tag>EVALUATION</tag>
+		<tag>LEARNING</tag>
+	      </tags>
+	      <themes>
+		<theme>DEVELOPING_AUTONOMY</theme>
+	      </themes>
+	      <duration>30</duration>
+	      <audiences></audiences>
+	      <level>1</level>
+	      <objectives></objectives>
+	      <additionalData></additionalData>
+	    </content>
+	```
