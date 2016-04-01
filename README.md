@@ -16,4 +16,25 @@ At the moment, we accept these different formats:
 Metadata and presentation
 -------------------------
 
-The metadata should be presented as an XML file. You'll find the XML Schema in this repository (catalog_import.xsd)
+The metadata should be presented as an XML file. You'll find the XML Schema in this repository (catalog\_import.xsd)
+
+
+How do I test my catalog.xml ?
+------------------------------
+
+We've included a simple python tool to test that
+
+### Requirements
+
+To use our tool you need to make sure that you have python-lxml installed:
+
+	$> pip install -r requirements.txt
+
+### Check my catalog
+
+Once you have the requirements installed you can check your datafeed like this:
+
+	$> python ./check.py my_catalog.xml
+
+
+
