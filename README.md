@@ -18,33 +18,14 @@ Metadata and presentation
 
 The metadata should be presented as an XML file. You'll find the XML Schema in this repository (catalog\_import.xsd)
 
-
-How do I test my catalog.xml ?
-------------------------------
-
-We've included a simple python tool to test that
-
-### Requirements
-
-To use our tool you need to make sure that you have python-lxml installed:
-
-	$> pip install -r requirements.txt
-
-### Check my catalog
-
-Once you have the requirements installed you can check your datafeed like this:
-
-	$> python ./check.py my_catalog.xml
-
-
-	```xml
-	<?xml version="1.0" encoding="UTF-8"?>
+### Presentation
+ 
+	```<?xml version="1.0" encoding="UTF-8"?>
 	<catalog>
 	  <provider>
 	    <name>CrossKnowledge Library</name>
 	    <description>Content from LCMS Content</description>
 	    <picture>http://example.ck/crossknowledge.gif</picture>
-	    <behaveLikeCrossKnowledge>true</behaveLikeCrossKnowledge>
 	    <defaultThumbnail>
 	      <content>crossknowledge.gif</content>
 	    </defaultThumbnail>
@@ -77,4 +58,23 @@ Once you have the requirements installed you can check your datafeed like this:
 	      <objectives></objectives>
 	      <additionalData></additionalData>
 	    </content>
-	```
+    </contents>```
+
+How do I test my catalog.xml ?
+------------------------------
+
+We've included a simple python tool to test that
+
+### Requirements
+
+To use our tool you need to make sure that you have python-lxml installed:
+
+	$> pip install -r requirements.txt
+
+### Check my catalog
+
+Once you have the requirements installed you can check your datafeed like this:
+
+	$> python ./check.py my_catalog.xml
+
+
