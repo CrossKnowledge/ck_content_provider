@@ -34,15 +34,14 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 	    <content>
 	      <refId>OJMH390</refId>
 	      <refIdVersion>OJMH390</refIdVersion>
-	      <title>تقديم تعليقات بناءة</title>
+	      <title>How to Give a Constructive Feedback</title>
 	      <locale></locale>
 	      <summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
 	      <type>Interactive</type>
 	      <subtype>Session</subtype>
-	      <runtime>C</runtime>
+	      <runtime>scorm</runtime>
 	      <thumbnail></thumbnail>
-	      <url>OJMH390</url>
-	      <alternateUrl>OJMH390</alternateUrl>
+	      <url>http://path/to/object/OJMH390.zip</url>
 	      <tags>
 		<tag>SKILLS_MANAGEMENT</tag>
 		<tag>TRAINING</tag>
