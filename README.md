@@ -128,7 +128,53 @@ XML content description
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scoreinprogress			    |	text				||							|
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detailedcontent			    |	text				||							|
 
+How do I send my metadata and my content ?
+--------------------------
 
+We will provide you with an SFTP server where you will send the content and the metadata files.
+
+### Naming Scheme
+
+#### Catalog
+The catalog should be created with the date of the creation in the name following this convention:
+	catalog-YYYYmmddHHMMSS.xml
+
+	example catalog-20160403132400.xml for a catalog created on the 3rd of April 2016, at 1:24:00 pm. The hours need to be in the 24h format.
+	
+Our system will process the files and put them in a backup directory afterwards.
+
+#### Reference to the content
+
+The references in the XML file can be either absolute (http://domain/path/to/file.png) or relative to the position of the catalog file. If you have an directory structure like this
+	FTP/
+		- catalog-20160403132400.xml
+		- Scorm/
+			- first_course.zip
+			- second_course.zip
+		- Img/
+			- course_1_thumb.jpg
+			- course_2_thumb.jpg
+
+Then your catalog should look like that:
+```xml
+	...
+	<content>
+		<title>Course 1 title here</title>
+		<thumbnail>Img/course_1_thumb.jpg</thumbnail>
+		<url>Scorm/first_course.zip</url>
+		...
+	</content>
+	<content>
+		<title>Title of the Second course</title>
+		<thumbnail>Img/course_2_thumb.jpg</thumbnail>
+		<url>Scorm/second_course.zip</url>
+		...
+	</content>
+	...
+```
+
+It's always better to use simplify the name of the assets to use only basic characters:
+	[a-zA-Z0-9_\-\.]
 
 How do I test my catalog.xml ?
 ------------------------------
@@ -148,5 +194,6 @@ Once you have the requirements installed you can check your datafeed like this:
 ```bash
 python ./check.py my_catalog.xml
 ```
+
 
 
