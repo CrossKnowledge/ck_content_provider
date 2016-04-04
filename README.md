@@ -137,6 +137,7 @@ We will provide you with an SFTP server where you will send the content and the 
 
 #### Catalog
 The catalog should be created with the date of the creation in the name following this convention:
+
 	catalog-YYYYmmddHHMMSS.xml
 
 Example : catalog-20160403132400.xml for a catalog created on the 3rd of April 2016, at 1:24:00 pm. The hours need to be in the 24h format.
