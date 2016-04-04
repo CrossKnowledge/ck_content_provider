@@ -11,7 +11,7 @@
 	<contents>
 		<content>
 			<refId>OJMH390</refId>
-			<refIdVersion>OJMH390</refIdVersion>
+			<refIdVersion>OJMH390_v1</refIdVersion>
 			<title>How to Give a Constructive Feedback</title>
 			<locale></locale>
 			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
@@ -21,13 +21,13 @@
 			<thumbnail></thumbnail>
 			<url>http://path/to/object/OJMH390.zip</url>
 			<tags>
-				<tag>SKILLS_MANAGEMENT</tag>
-				<tag>TRAINING</tag>
-				<tag>EVALUATION</tag>
-				<tag>LEARNING</tag>
+				<tag>Skills Management</tag>
+				<tag>Training</tag>
+				<tag>Evaluation</tag>
+				<tag>Learning</tag>
 			</tags>
 			<themes>
-				<theme>DEVELOPING_AUTONOMY</theme>
+				<theme>Developing Autonomy</theme>
 			</themes>
 			<duration>30</duration>
 			<audiences></audiences>

@@ -19,46 +19,47 @@ Metadata and presentation
 The metadata should be presented as an XML file. You'll find the XML Schema in this repository (catalog\_import.xsd)
 
 ### Presentation
- 
-	```<?xml version="1.0" encoding="UTF-8"?>
+	```
+	<?xml version="1.0" encoding="UTF-8"?>
 	<catalog>
-	  <provider>
-	    <name>CrossKnowledge Library</name>
-	    <description>Content from LCMS Content</description>
-	    <picture>http://example.ck/crossknowledge.gif</picture>
-	    <defaultThumbnail>
-	      <content>crossknowledge.gif</content>
-	    </defaultThumbnail>
-	  </provider>
-	  <contents>
-	    <content>
-	      <refId>OJMH390</refId>
-	      <refIdVersion>OJMH390</refIdVersion>
-	      <title>How to Give a Constructive Feedback</title>
-	      <locale></locale>
-	      <summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
-	      <type>Interactive</type>
-	      <subtype>Session</subtype>
-	      <runtime>scorm</runtime>
-	      <thumbnail></thumbnail>
-	      <url>http://path/to/object/OJMH390.zip</url>
-	      <tags>
-		<tag>SKILLS_MANAGEMENT</tag>
-		<tag>TRAINING</tag>
-		<tag>EVALUATION</tag>
-		<tag>LEARNING</tag>
-	      </tags>
-	      <themes>
-		<theme>DEVELOPING_AUTONOMY</theme>
-	      </themes>
-	      <duration>30</duration>
-	      <audiences></audiences>
-	      <level>1</level>
-	      <objectives></objectives>
-	      <additionalData></additionalData>
-	    </content>
-    	</contents>
-    </catalog>```
+		<provider>
+			<name>CrossKnowledge Library</name>
+			<description>Content from LCMS Content</description>
+			<picture>http://example.ck/crossknowledge.gif</picture>
+			<defaultThumbnail>
+				<content>crossknowledge.gif</content>
+			</defaultThumbnail>
+		</provider>
+		<contents>
+			<content>
+				<refId>OJMH390</refId>
+				<refIdVersion>OJMH390_v1</refIdVersion>
+				<title>How to Give a Constructive Feedback</title>
+				<locale></locale>
+				<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
+				<type>Interactive</type>
+				<subtype>Session</subtype>
+				<runtime>scorm</runtime>
+				<thumbnail></thumbnail>
+				<url>http://path/to/object/OJMH390.zip</url>
+				<tags>
+					<tag>Skills Management</tag>
+					<tag>Training</tag>
+					<tag>Evaluation</tag>
+					<tag>Learning</tag>
+				</tags>
+				<themes>
+					<theme>Developing Autonomy</theme>
+				</themes>
+				<duration>30</duration>
+				<audiences></audiences>
+				<level>1</level>
+				<objectives></objectives>
+				<additionalData></additionalData>
+			</content>
+		</contents>
+	</catalog>
+	```
 
 Content
 ------- 
