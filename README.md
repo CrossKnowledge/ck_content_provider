@@ -36,10 +36,11 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 			<refIdVersion>OJMH390_v1</refIdVersion>
 			<title>How to Give a Constructive Feedback</title>
 			<locale></locale>
-			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
-			<type>Interactive</type>
-			<subtype>Session</subtype>
-			<runtime>scorm</runtime>
+			<description>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</description>
+			<summary/>
+			<type>See description</type>
+			<subtype>See description</subtype>
+			<runtime>See description</runtime>
 			<thumbnail></thumbnail>
 			<url>http://path/to/object/OJMH390.zip</url>
 			<tags>
@@ -63,70 +64,67 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 
 XML content description
 ------- 
-
-
-|Field/Node|Type/Format|Size|Required|Description|
-| :------- | :---- | :---: | :---: |:---|
-|**catalog**                    |Main node||YES|
-| &nbsp;&nbsp;**provider**                 |node||YES|Informations block about provider|
-| &nbsp;&nbsp;&nbsp;&nbsp;name                       |text|||
-| &nbsp;&nbsp;&nbsp;&nbsp;description                |text|256|YES|	Short description about company, content, etc|
-| &nbsp;&nbsp;&nbsp;&nbsp;picture                    |absolute url|suggestion: 250px X 60px|YES|Path to logotipo/image. Eg: someurl.com/mylogo.png
-| &nbsp;&nbsp;&nbsp;&nbsp;thumbnail                  ||||	Image which represent the provider, like logo, symbol, etc.
-| &nbsp;&nbsp;**contents**                 |node||YES|
-| &nbsp;&nbsp;&nbsp;&nbsp;content                    |node||YES|For each content
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refId                    |text|45|YES|Reference ID. Must be unique for all versions of content. Eg: AB22 . The refid represents the content in all languages and versions available.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;refIdVersion             |text        |    45 |YES     | Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2, etc.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstPublicationDate     |date (YYYY-mm-dd) || No (highly recommended)|First publication date. Creation date to help versions control.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastMofidificationDate 	|	date (YYYY-mm-dd)	||	No (highly recommended)	|	First publication date. Creation date to help versions control.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;title 					          |	text				||	YES						|	Do not must be unique, but highly recommended
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subtitle 				        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locale 					        |	text				||							|	Language of content. Better if uses the language-Country format. Eg: en-US, fr-FR, etc.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;description 				      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;summary 					        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type						          |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subtype					        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;runtime					        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;url						          |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alternateUrl				      |	url					||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thumbnail				        |	url					||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audience					        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objectives				        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;duration					        |	int					||							|	In minutes Eg. 10,20,etc.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;course					          |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**tags**					        |						  ||							|	One or more
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag(1)					        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tag(n)					        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**themes**				        |						  ||							|	One or more themes, can be separated by comma(,). If the content have a categorization, this place can be used for it.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme(1)				        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;theme(n)				        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**authors**				      |						  ||							|	One or more
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;author					        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;firstname			      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;lastname				      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email				        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jobtitle				      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;company				      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;phone				        |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authorThumbnail		  |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;customGuid			      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;competencies			    |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authorThumbnail		  |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**biographies**		  |						  ||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biography			    |						  ||							|	One or more
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;locale			      |						  ||							|	Language of biography. Better if uses the language-Country format. Eg: en-US, fr-FR, etc.
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biographyFull	  |						  ||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;biographyShort	  |						  ||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;additionalData			      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;videoSubtitles			      |						  ||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subtitle (en-US)		    |	text				||							|	Eg: legend_en-US.srt
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;subtitle (fr-FR)		    |	text				||							|	Eg: legend_fr-FR.srt
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audiences				        |						  ||							|	One or more audience, can be separated by comma (,). Eg: Leader, Senior manager, project manager, etc
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audience (1)			      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audience (2)			      |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;level					          |	int					|	  1,2 or 3  |	|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;scoreinprogress			    |	text				||							|
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;detailedcontent			    |	text				||							|
+|Field/Node                                                         |Type/Format            |Size       |Required       |Description        |
+| :-------                                                          | :----                 | :---:     | :---:         |:---               |
+|**catalog**                                                        |Main node              |           |YES            |                   |
+|&nbsp; **provider**                                                |   node                |           |YES            |   Informations block about provider   |
+|&nbsp; &nbsp; name                                                 |   text                |           |YES            |                   |
+|&nbsp; &nbsp; description                                          |   text                |   256     |YES            |   Short description about company, content, etc
+|&nbsp; &nbsp; picture                                              |   url                 |suggestion: 250px X 60px. |YES |   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png
+|&nbsp; &nbsp; thumbnail                                            |   url                 |           |              |    |	Image which represent the provider, like logo, symbol, etc. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px.
+|&nbsp; **contents**                                                |   node                |           |YES            |
+|&nbsp; &nbsp; content                                              |   node                |           |YES            |   For each content
+|&nbsp; &nbsp; &nbsp; refId                                         |   text                |   45      |YES            |   Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
+|&nbsp; &nbsp; &nbsp; refIdVersion                                  |   text                |   45      |YES            |   Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2, etc.
+|&nbsp; &nbsp; &nbsp; firstPublicationDate                          |   date (YYYY-mm-dd)   || No (highly recommended)  |   First publication date. Creation date to help versions control.
+|&nbsp; &nbsp; &nbsp; title                                         |	text				|           |	YES			|	Do not must be unique, but highly recommended
+|&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
+|&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
+|&nbsp; &nbsp; &nbsp; description                                   |	text				||							|
+|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|   Summary should be empty. Use **description** instead 
+|&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, etc.
+|&nbsp; &nbsp; &nbsp; subtype                                       |	text				|           |   YES			|   If the content is categorized, put category here
+|&nbsp; &nbsp; &nbsp; runtime                                       |	text				||							|   Use "CKLM_SCORM" => Scorm, "CKLM_FILE" => Reading document LIKE PDF, Image, DOC, "link_lo_guid" => Website, url
+|&nbsp; &nbsp; &nbsp; url                                           |	text				||							|
+|&nbsp; &nbsp; &nbsp; alternateUrl                                  |	url					||							|
+|&nbsp; &nbsp; &nbsp; thumbnail                                     |	url					||							|
+|&nbsp; &nbsp; &nbsp; audience                                      |	text				||							|
+|&nbsp; &nbsp; &nbsp; objectives                                    |	text				||							|
+|&nbsp; &nbsp; &nbsp; duration                                      |	int					||							|	In minutes Eg. 10,20,etc.
+|&nbsp; &nbsp; &nbsp; course                                        |	text				||							|
+|&nbsp; &nbsp; &nbsp; **tags**                                      |						||							|	One or more, one per tag
+|&nbsp; &nbsp; &nbsp; &nbsp; tag(1)                                 |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; tag(n)                                 |	text				||							|
+|&nbsp; &nbsp; &nbsp; **themes**                                    |						||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; theme(1)                               |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; theme(n)                               |	text				||							|
+|&nbsp; &nbsp; &nbsp; **authors**                                   |						||							|	One or more
+|&nbsp; &nbsp; &nbsp; &nbsp; author                                 |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firstname                       |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lastname				        |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; email                           |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jobtitle				        |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; company                         |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; phone                           |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; authorThumbnail                 |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; customGuid                      |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; competencies			        |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; authorThumbnail                 |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **biographies**                 |						||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; biography                |						||							|	One or more
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; locale            |						||							|	Language of biography. Should be in this format: language-COUNTRY. Eg: en-US, fr-FR, etc.
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; biographyFull     |						||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; biographyShort    |						||							|
+|&nbsp; &nbsp; &nbsp; additionalData                                |	text				||							|
+|&nbsp; &nbsp; &nbsp; videoSubtitles                                |						||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (en&nbsp;US)                  |	text				||							|	Eg: legend_en-US.srt
+|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (fr&nbsp;FR)                  |	text				||							|	Eg: legend_fr-FR.srt
+|&nbsp; &nbsp; &nbsp; audiences                                     |						||							|	One or more audience. Eg: Leader, Senior manager, project manager, etc. One audience pe tag.
+|&nbsp; &nbsp; &nbsp; &nbsp; audience (1)                           |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; audience (2)                           |	text				||							|
+|&nbsp; &nbsp; &nbsp; level                                         |	int					|  1,2 or 3     |	        |
+|&nbsp; &nbsp; &nbsp; scoreinprogress                               |	text				||							|
+|&nbsp; &nbsp; &nbsp; detailedcontent                               |	text				||							|
 
 How do I send my metadata and my content ?
 --------------------------
@@ -174,7 +172,7 @@ Then your catalog should look like that:
 	...
 ```
 
-It's always better to use simplify the name of the assets to use only basic characters:
+It's recommended to use simplify the name of the assets to use only basic characters:
 	[a-zA-Z0-9_\-\.]
 
 How do I test my catalog.xml ?
