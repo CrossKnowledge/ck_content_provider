@@ -36,68 +36,66 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 			<refIdVersion>OJMH390_v1</refIdVersion>
 			<title>How to Give a Constructive Feedback</title>
 			<locale></locale>
-			<description>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</description>
-			<summary/>
-			<type>See description</type>
-			<subtype>See description</subtype>
-			<runtime>See description</runtime>
+			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
+			<type>i</type>
+			<subtype>Interactive</subtype>
+			<runtime>CKLM_SCORM</runtime>
 			<thumbnail></thumbnail>
 			<url>http://path/to/object/OJMH390.zip</url>
 			<tags>
-				<tag>Skills Management</tag>
-				<tag>Training</tag>
-				<tag>Evaluation</tag>
-				<tag>Learning</tag>
+			<tag>Skills Management</tag>
+			<tag>Training</tag>
+			<tag>Evaluation</tag>
+			<tag>Learning</tag>
 			</tags>
 			<themes>
-				<theme>Developing Autonomy > Identifying the problem</theme>
-				<theme> ... </theme>
+			<theme>Developing Autonomy > Identifying the problem</theme>
 			</themes>
 			<duration>30</duration>
 			<audiences></audiences>
 			<level>1</level>
 			<objectives></objectives>
 			<additionalData></additionalData>
-		</content>
-	</contents>
-</catalog>
-```
+			</content>
+			</contents>
+			</catalog>
+			```
 
-XML content description
-------- 
-|Field/Node                                                         |Type/Format            |Size       |Required       |Description        |
-| :-------                                                          | :----                 | :---:     | :---:         |:---               |
-|**catalog**                                                        |Main node              |           |YES            |                   |
-|&nbsp; **provider**                                                |   node                |           |YES            |   Informations block about provider   |
-|&nbsp; &nbsp; name                                                 |   text                |           |YES            |                   |
-|&nbsp; &nbsp; description                                          |   text                |   256     |YES            |   Short description about company, content, etc
-|&nbsp; &nbsp; picture                                              |   url                 |suggestion: 250px X 60px. |YES |   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png
-|&nbsp; &nbsp; thumbnail                                            |   url                 |           |              |    |	Image which represent the provider, like logo, symbol, etc. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture.
-|&nbsp; **contents**                                                |   node                |           |YES            |
-|&nbsp; &nbsp; content                                              |   node                |           |YES            |   For each content
-|&nbsp; &nbsp; &nbsp; refId                                         |   text                |   45      |YES            |   Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
-|&nbsp; &nbsp; &nbsp; refIdVersion                                  |   text                |   45      |YES            |   Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2, etc.
-|&nbsp; &nbsp; &nbsp; firstPublicationDate                          |   date (YYYY-mm-dd)   || No (highly recommended)  |   First publication date. Creation date to help versions control.
-|&nbsp; &nbsp; &nbsp; title                                         |	text				|           |	YES			|	Unicity not required but highly recommended
-|&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
-|&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
-|&nbsp; &nbsp; &nbsp; description                                   |	text				||							|
-|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|   Summary should be empty. Use **description** instead 
-|&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, etc.
-|&nbsp; &nbsp; &nbsp; subtype                                       |	text				|           |   YES			|   If the content is categorized, put category here
-|&nbsp; &nbsp; &nbsp; runtime                                       |	text				|           |	YES			|   Use "CKLM_SCORM" => Scorm, "CKLM_FILE" => Reading document LIKE PDF, Image, DOC, "link_lo_guid" => Website, url
-|&nbsp; &nbsp; &nbsp; url                                           |	text				||							|
-|&nbsp; &nbsp; &nbsp; alternateUrl                                  |	url					||							|
-|&nbsp; &nbsp; &nbsp; thumbnail                                     |	url					||							|   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/content_thumbnail/someimage.png
-|&nbsp; &nbsp; &nbsp; audience                                      |	text				||							|
-|&nbsp; &nbsp; &nbsp; objectives                                    |	text				||							|
-|&nbsp; &nbsp; &nbsp; duration                                      |	int					||							|	In minutes Eg. 10,20,etc.
-|&nbsp; &nbsp; &nbsp; course                                        |	text				||							|
-|&nbsp; &nbsp; &nbsp; **tags**                                      |						||							|	One or more, one per tag
-|&nbsp; &nbsp; &nbsp; &nbsp; tag(1)                                 |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; tag(n)                                 |	text				||							|
-|&nbsp; &nbsp; &nbsp; **themes**                                    |						||							|   This element can be used for a more detailed categorization using character ">". Eg. <theme>Main Theme > SubTheme > ...</theme>
-|&nbsp; &nbsp; &nbsp; &nbsp; theme(1)                               |	text				||							|
+			XML content description
+			------- 
+			|Field/Node                                                         |Type/Format            |Size       |Required       |Description        |
+			| :-------                                                          | :----                 | :---:     | :---:         |:---               |
+			|**catalog**                                                        |Main node              |           |YES            |                   |
+			|&nbsp; **provider**                                                |   node                |           |YES            |   Informations block about provider   |
+			|&nbsp; &nbsp; name                                                 |   text                |           |YES            |                   |
+			|&nbsp; &nbsp; description                                          |   text                |   256     |YES            |   Short description about company, content, etc
+			|&nbsp; &nbsp; picture                                              |   url                 |suggestion: 250px X 60px. |YES |   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png
+			|&nbsp; &nbsp; thumbnail                                            |   url                 |           |              |    |	Image which represent the provider, like logo, symbol, etc. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture.
+			|&nbsp; **contents**                                                |   node                |           |YES            |
+			|&nbsp; &nbsp; content                                              |   node                |           |YES            |   For each content
+			|&nbsp; &nbsp; &nbsp; refId                                         |   text                |   45      |YES            |   Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
+			|&nbsp; &nbsp; &nbsp; refIdVersion                                  |   text                |   45      |YES            |   Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2, etc.
+			|&nbsp; &nbsp; &nbsp; firstPublicationDate                          |   date (YYYY-mm-dd)   || No (highly recommended)  |   First publication date. Creation date to help versions control.
+			|&nbsp; &nbsp; &nbsp; title                                         |	text				|           |	YES			|	Unicity not required but highly recommended
+			|&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
+			|&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
+			|&nbsp; &nbsp; &nbsp; description                                   |	text				||							|
+			|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|   Summary should be empty. Use **description** instead 
+			|&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, etc.
+			|&nbsp; &nbsp; &nbsp; subtype                                       |	text				|           |   YES			|   If the content is categorized, put category here
+			|&nbsp; &nbsp; &nbsp; runtime                                       |	text				|           |	YES			|   Use: "CKLM_SCORM" => Scorm<br/> "CKLM_FILE" => Reading document, PDF, Image, DOC<br/> "link_lo_guid" => Website, url
+			|&nbsp; &nbsp; &nbsp; url                                           |	text				||							|
+			|&nbsp; &nbsp; &nbsp; alternateUrl                                  |	url					||							|
+			|&nbsp; &nbsp; &nbsp; thumbnail                                     |	url					||							|   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/content_thumbnail/someimage.png
+			|&nbsp; &nbsp; &nbsp; audience                                      |	text				||							|
+			|&nbsp; &nbsp; &nbsp; objectives                                    |	text				||							|
+			|&nbsp; &nbsp; &nbsp; duration                                      |	int					||							|	In minutes Eg. 10,20,etc.
+			|&nbsp; &nbsp; &nbsp; course                                        |	text				||							|
+			|&nbsp; &nbsp; &nbsp; **tags**                                      |						||							|	One or more, one per tag
+			|&nbsp; &nbsp; &nbsp; &nbsp; tag(1)                                 |	text				||							|
+			|&nbsp; &nbsp; &nbsp; &nbsp; tag(n)                                 |	text				||							|
+			|&nbsp; &nbsp; &nbsp; **themes**                                    |						||							|   This element can be used for a more detailed categorization using character ">". Eg. <theme>Main Theme > SubTheme > ...</theme>
+			|&nbsp; &nbsp; &nbsp; &nbsp; theme(1)                               |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; theme(n)                               |	text				||							|
 |&nbsp; &nbsp; &nbsp; **authors**                                   |						||							|	One or more
 |&nbsp; &nbsp; &nbsp; &nbsp; author                                 |	text				||							|
