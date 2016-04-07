@@ -15,9 +15,9 @@
 			<title>How to Give a Constructive Feedback</title>
 			<locale></locale>
 			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
-			<type>Interactive</type>
-			<subtype>Session</subtype>
-			<runtime>scorm</runtime>
+			<type>See description</type>
+			<subtype>See description</subtype>
+			<runtime>See description</runtime>
 			<thumbnail></thumbnail>
 			<url>http://path/to/object/OJMH390.zip</url>
 			<tags>
@@ -27,7 +27,8 @@
 				<tag>Learning</tag>
 			</tags>
 			<themes>
-				<theme>Developing Autonomy</theme>
+				<theme>Developing Autonomy > Identifying the problem</theme>
+				<theme> ... </theme>
 			</themes>
 			<duration>30</duration>
 			<audiences></audiences>

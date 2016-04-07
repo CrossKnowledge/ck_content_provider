@@ -50,7 +50,8 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 				<tag>Learning</tag>
 			</tags>
 			<themes>
-				<theme>Developing Autonomy</theme>
+				<theme>Developing Autonomy > Identifying the problem</theme>
+				<theme> ... </theme>
 			</themes>
 			<duration>30</duration>
 			<audiences></audiences>
@@ -71,7 +72,7 @@ XML content description
 |&nbsp; &nbsp; name                                                 |   text                |           |YES            |                   |
 |&nbsp; &nbsp; description                                          |   text                |   256     |YES            |   Short description about company, content, etc
 |&nbsp; &nbsp; picture                                              |   url                 |suggestion: 250px X 60px. |YES |   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png
-|&nbsp; &nbsp; thumbnail                                            |   url                 |           |              |    |	Image which represent the provider, like logo, symbol, etc. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px.
+|&nbsp; &nbsp; thumbnail                                            |   url                 |           |              |    |	Image which represent the provider, like logo, symbol, etc. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture.
 |&nbsp; **contents**                                                |   node                |           |YES            |
 |&nbsp; &nbsp; content                                              |   node                |           |YES            |   For each content
 |&nbsp; &nbsp; &nbsp; refId                                         |   text                |   45      |YES            |   Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
@@ -84,10 +85,10 @@ XML content description
 |&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|   Summary should be empty. Use **description** instead 
 |&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, etc.
 |&nbsp; &nbsp; &nbsp; subtype                                       |	text				|           |   YES			|   If the content is categorized, put category here
-|&nbsp; &nbsp; &nbsp; runtime                                       |	text				||							|   Use "CKLM_SCORM" => Scorm, "CKLM_FILE" => Reading document LIKE PDF, Image, DOC, "link_lo_guid" => Website, url
+|&nbsp; &nbsp; &nbsp; runtime                                       |	text				|           |	YES			|   Use "CKLM_SCORM" => Scorm, "CKLM_FILE" => Reading document LIKE PDF, Image, DOC, "link_lo_guid" => Website, url
 |&nbsp; &nbsp; &nbsp; url                                           |	text				||							|
 |&nbsp; &nbsp; &nbsp; alternateUrl                                  |	url					||							|
-|&nbsp; &nbsp; &nbsp; thumbnail                                     |	url					||							|
+|&nbsp; &nbsp; &nbsp; thumbnail                                     |	url					||							|   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/content_thumbnail/someimage.png
 |&nbsp; &nbsp; &nbsp; audience                                      |	text				||							|
 |&nbsp; &nbsp; &nbsp; objectives                                    |	text				||							|
 |&nbsp; &nbsp; &nbsp; duration                                      |	int					||							|	In minutes Eg. 10,20,etc.
@@ -95,7 +96,7 @@ XML content description
 |&nbsp; &nbsp; &nbsp; **tags**                                      |						||							|	One or more, one per tag
 |&nbsp; &nbsp; &nbsp; &nbsp; tag(1)                                 |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; tag(n)                                 |	text				||							|
-|&nbsp; &nbsp; &nbsp; **themes**                                    |						||							|
+|&nbsp; &nbsp; &nbsp; **themes**                                    |						||							|   This element can be used for a more detailed categorization using character ">". Eg. <theme>Main Theme > SubTheme > ...</theme>
 |&nbsp; &nbsp; &nbsp; &nbsp; theme(1)                               |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; theme(n)                               |	text				||							|
 |&nbsp; &nbsp; &nbsp; **authors**                                   |						||							|	One or more
@@ -106,7 +107,7 @@ XML content description
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jobtitle				        |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; company                         |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; phone                           |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; authorThumbnail                 |	text				||							|
+|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; authorThumbnail                 |	text				||							|   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/authors_thumbnail/someimage.png
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; customGuid                      |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; competencies			        |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; authorThumbnail                 |	text				||							|
@@ -117,8 +118,8 @@ XML content description
 |&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; biographyShort    |						||							|
 |&nbsp; &nbsp; &nbsp; additionalData                                |	text				||							|
 |&nbsp; &nbsp; &nbsp; videoSubtitles                                |						||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (en&nbsp;US)                  |	text				||							|	Eg: legend_en-US.srt
-|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (fr&nbsp;FR)                  |	text				||							|	Eg: legend_fr-FR.srt
+|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (en-US)                       |	text				||							|	Eg: legend_en-US.srt
+|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (fr-FR)                       |	text				||							|	Eg: legend_fr-FR.srt
 |&nbsp; &nbsp; &nbsp; audiences                                     |						||							|	One or more audience. Eg: Leader, Senior manager, project manager, etc. One audience pe tag.
 |&nbsp; &nbsp; &nbsp; &nbsp; audience (1)                           |	text				||							|
 |&nbsp; &nbsp; &nbsp; &nbsp; audience (2)                           |	text				||							|
