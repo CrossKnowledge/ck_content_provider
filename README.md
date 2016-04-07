@@ -75,7 +75,7 @@ XML content description
 |&nbsp; &nbsp; content                                              |   node                |           |YES            |   For each content
 |&nbsp; &nbsp; &nbsp; refId                                         |   text                |   45      |YES            |   Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
 |&nbsp; &nbsp; &nbsp; refIdVersion                                  |   text                |   45      |YES            |   Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2, etc.
-|&nbsp; &nbsp; &nbsp; firstPublicationDate                          |   date (YYYY-mm-dd)   || No (highly recommended)  |   First publication date. Creation date to help versions control.
+|&nbsp; &nbsp; &nbsp; firstPublicationDate                          |   date (YYYY-mm-dd)   || YES  |   First publication date. Creation date to help versions control.
 |&nbsp; &nbsp; &nbsp; title                                         |	text				|           |	YES			|	Unicity not required but highly recommended
 |&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
 |&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
