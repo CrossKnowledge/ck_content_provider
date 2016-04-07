@@ -81,7 +81,7 @@ XML content description
 |&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
 |&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
 |&nbsp; &nbsp; &nbsp; description                                   |	text				||							|
-|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|   Summary should be empty. Use **description** instead 
+|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|   Legacy, should be empty. Use **description** instead 
 |&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, etc.
 |&nbsp; &nbsp; &nbsp; subtype                                       |	text				|           |   YES			|   If the content is categorized, put category here
 |&nbsp; &nbsp; &nbsp; runtime                                       |	text				|           |	YES			|   Use: "CKLM_SCORM" => Scorm<br/> "CKLM_FILE" => Reading document, PDF, Image, DOC<br/> "link_lo_guid" => Website, url
