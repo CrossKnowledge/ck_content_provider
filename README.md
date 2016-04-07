@@ -43,22 +43,22 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 			<thumbnail></thumbnail>
 			<url>http://path/to/object/OJMH390.zip</url>
 			<tags>
-			<tag>Skills Management</tag>
-			<tag>Training</tag>
-			<tag>Evaluation</tag>
-			<tag>Learning</tag>
+				<tag>Skills Management</tag>
+				<tag>Training</tag>
+				<tag>Evaluation</tag>
+				<tag>Learning</tag>
 			</tags>
 			<themes>
-			<theme>Developing Autonomy > Identifying the problem</theme>
+				<theme>Developing Autonomy > Identifying the problem</theme>
 			</themes>
 			<duration>30</duration>
 			<audiences></audiences>
 			<level>1</level>
 			<objectives></objectives>
 			<additionalData></additionalData>
-			</content>
-			</contents>
-			</catalog>
+		</content>
+	</contents>
+</catalog>
 ```
 
 XML content description
