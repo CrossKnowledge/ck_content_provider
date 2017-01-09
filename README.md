@@ -35,13 +35,15 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 			<refId>OJMH390</refId>
 			<refIdVersion>OJMH390_v1</refIdVersion>
 			<title>How to Give a Constructive Feedback</title>
-			<locale></locale>
+			<locale>en-US</locale>
+			<description>This course will start out reviewing traditional CSS3 Layout, including flexbox, regions, and multicolumn layout. Then we will discuss WinJS controls that support additional UI layout options, including the ListView, SemanticZoom, and ViewBox controls.  We will see that the ListView displays items in grid or list layout, whereas the SemanticZoom supports zoom between two semantic levels, and the ViewBox allows for dynamically scaling single child element to fill available space without changing aspect ratio.</description>
 			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
-			<fistPublicationDate>2015-01-02</fistPublicationDate>
 			<type>i</type>
 			<subtype>Interactive</subtype>
 			<runtime>CKLM_SCORM</runtime>
-			<thumbnail></thumbnail>
+			<url>http://path/to/object/OJMH390.zip</url>
+			<alternateUrl></alternateUrl>
+			<publicationDate>2014-02-14</publicationDate>
 			<url>http://path/to/object/OJMH390.zip</url>
 			<tags>
 				<tag>Skills Management</tag>
@@ -49,6 +51,7 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 				<tag>Evaluation</tag>
 				<tag>Learning</tag>
 			</tags>
+			<thumbnail>img/8AI5.PNG</thumbnail>
 			<themes>
 				<theme>Developing Autonomy > Identifying the problem</theme>
 			</themes>
@@ -57,6 +60,21 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 			<level>1</level>
 			<objectives></objectives>
 			<additionalData></additionalData>
+			<authors>
+				<author>
+					<firstName>Peter</firstName>
+					<lastName>Thorsteinson</lastName>
+					<company></company>
+					<authorThumbnail>img/thorsteinson.png</authorThumbnail>
+					<biographies>
+						<biography>
+							<locale>en-US</locale>
+							<biographyFull>Peter Thornsteinson...</biographyFull>
+							<biographyShort>Microsoft Expert</biographyShort>
+						</biography>
+					</biographies>
+				</author>
+			</authors>			
 		</content>
 	</contents>
 </catalog>
