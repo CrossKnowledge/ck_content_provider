@@ -44,22 +44,21 @@ The metadata should be presented as an XML file. You'll find the XML Schema in t
 			<url>http://path/to/object/OJMH390.zip</url>
 			<alternateUrl></alternateUrl>
 			<publicationDate>2014-02-14</publicationDate>
-			<url>http://path/to/object/OJMH390.zip</url>
+			<thumbnail>img/8AI5.PNG</thumbnail>
+			<audience></audience>
+			<objectives></objectives>
+			<duration>30</duration>
+			<level>1</level>
+			<additionalData></additionalData>
 			<tags>
 				<tag>Skills Management</tag>
 				<tag>Training</tag>
 				<tag>Evaluation</tag>
 				<tag>Learning</tag>
 			</tags>
-			<thumbnail>img/8AI5.PNG</thumbnail>
 			<themes>
 				<theme>Developing Autonomy > Identifying the problem</theme>
 			</themes>
-			<duration>30</duration>
-			<audiences></audiences>
-			<level>1</level>
-			<objectives></objectives>
-			<additionalData></additionalData>
 			<authors>
 				<author>
 					<firstName>Peter</firstName>
@@ -94,7 +93,6 @@ XML content description
 |&nbsp; &nbsp; content                                              |   node                |           |YES            |   For each content
 |&nbsp; &nbsp; &nbsp; refId                                         |   text                |   45      |YES            |   Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
 |&nbsp; &nbsp; &nbsp; refIdVersion                                  |   text                |   45      |YES            |   Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2, etc.
-|&nbsp; &nbsp; &nbsp; firstPublicationDate                          |   date (YYYY-mm-dd)   || YES  |   First publication date. Creation date to help versions control.
 |&nbsp; &nbsp; &nbsp; title                                         |	text				|           |	YES			|	Unicity not required but highly recommended
 |&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
 |&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
@@ -105,6 +103,7 @@ XML content description
 |&nbsp; &nbsp; &nbsp; runtime                                       |	text				|           |	YES			|   Use: "CKLM_SCORM" => Scorm<br/> "CKLM_FILE" => Reading document, PDF, Image, DOC<br/> "link_lo_guid" => Website, url
 |&nbsp; &nbsp; &nbsp; url                                           |	text				||							|
 |&nbsp; &nbsp; &nbsp; alternateUrl                                  |	url					||							|
+|&nbsp; &nbsp; &nbsp; publicationDate                          |   date (YYYY-mm-dd)   || YES  |   First publication date. Creation date to help versions control.
 |&nbsp; &nbsp; &nbsp; thumbnail                                     |	url					||							|   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/content_thumbnail/someimage.png
 |&nbsp; &nbsp; &nbsp; audience                                      |	text				||							|
 |&nbsp; &nbsp; &nbsp; objectives                                    |	text				||							|
