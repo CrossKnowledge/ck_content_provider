@@ -17,6 +17,7 @@ Metadata and presentation
 -------------------------
 
 The metadata should be presented as an XML file. You'll find the XML Schema in this repository (catalog\_import.xsd)
+Even if the node has no value the node must be in the catalog in right order.
 
 ### Presentation
 ```xml
@@ -96,9 +97,9 @@ XML content description
 |&nbsp; &nbsp; &nbsp; title                                         |	text				|           |	YES			|	Unicity not required but highly recommended
 |&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
 |&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
-|&nbsp; &nbsp; &nbsp; description                                   |	text				||							|
-|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|   Legacy, should be empty. Use **description** instead 
-|&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, etc.
+|&nbsp; &nbsp; &nbsp; description                                   |	text				||							|Legacy, should be empty. Use **summary** instead
+|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|
+|&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, public file hosted at other servers, etc.
 |&nbsp; &nbsp; &nbsp; subtype                                       |	text				|           |   YES			|   If the content is categorized, put category here
 |&nbsp; &nbsp; &nbsp; runtime                                       |	text				|           |	YES			|   Use: "CKLM_SCORM" => Scorm<br/> "CKLM_FILE" => Reading document, PDF, Image, DOC<br/> "link_lo_guid" => Website, url
 |&nbsp; &nbsp; &nbsp; url                                           |	text				||							|

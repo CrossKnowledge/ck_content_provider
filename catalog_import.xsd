@@ -57,7 +57,7 @@
 			<xs:element type="xs:string" name="course" minOccurs="0"/>
 			<xs:element type="tagsType" name="tags" minOccurs="0"/>
 			<xs:element type="themesType" name="themes" minOccurs="0"/>
-            <xs:element type="authorsType" name="authors" minOccurs="0"/>
+			<xs:element type="authorsType" name="authors" minOccurs="0"/>
 			<xs:element type="xs:string" name="additionalData" minOccurs="0"/>
 			<xs:element type="subtitlesType" name="videoSubtitles" minOccurs="0"/>
 			<xs:element type="xs:string" name="audiences" minOccurs="0"/>
@@ -100,39 +100,38 @@
 		</xs:sequence>
 	</xs:complexType>
 
-    <xs:complexType name="authorsType">
-        <xs:sequence>
-            <xs:element type="authorType" name="author" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
-
-	<xs:complexType name="authorType">
+	<xs:complexType name="authorsType">
 		<xs:sequence>
-			<xs:element type="xs:string" name="firstName" minOccurs="1"/>
-            <xs:element type="xs:string" name="lastName" minOccurs="1"/>
-			<xs:element type="xs:string" name="email" minOccurs="0"/>
-			<xs:element type="xs:string" name="jobTitle" minOccurs="0"/>
-			<xs:element type="xs:string" name="company" minOccurs="0"/>
-            <xs:element type="xs:string" name="phone" minOccurs="0"/>
-            <xs:element type="xs:string" name="authorThumbnail" minOccurs="0"/>
-            <xs:element type="xs:string" name="customGuid" minOccurs="0"/>
-            <xs:element type="biographiesType" name="biographies" minOccurs="0"/>
-			<xs:element type="xs:string" name="competencies" minOccurs="0"/>
+			<xs:element type="authorType" name="author" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
-    <xs:complexType name="biographiesType">
-        <xs:sequence>
-            <xs:element type="biographyType" name="biography" minOccurs="1" maxOccurs="unbounded"/>
-        </xs:sequence>
-    </xs:complexType>
+	<xs:complexType name="authorType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="firstName" minOccurs="0"/>
+			<xs:element type="xs:string" name="lastName" minOccurs="1"/>
+			<xs:element type="xs:string" name="email" minOccurs="0"/>
+			<xs:element type="xs:string" name="jobTitle" minOccurs="0"/>
+			<xs:element type="xs:string" name="company" minOccurs="0"/>
+			<xs:element type="xs:string" name="phone" minOccurs="0"/>
+			<xs:element type="xs:string" name="authorThumbnail" minOccurs="0"/>
+			<xs:element type="xs:string" name="customGuid" minOccurs="0"/>
+			<xs:element type="biographiesType" name="biographies" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 
-    <xs:complexType name="biographyType">
-        <xs:sequence>
-            <xs:element type="xs:string" name="locale" minOccurs="1"/>
-            <xs:element type="xs:string" name="biographyFull" minOccurs="1"/>
-            <xs:element type="xs:string" name="biographyShort" minOccurs="1"/>
-        </xs:sequence>
-    </xs:complexType>
+	<xs:complexType name="biographiesType">
+		<xs:sequence>
+			<xs:element type="biographyType" name="biography" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="biographyType">
+		<xs:sequence>
+			<xs:element type="xs:string" name="locale" minOccurs="1"/>
+			<xs:element type="xs:string" name="biographyFull" minOccurs="0"/>
+			<xs:element type="xs:string" name="biographyShort" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 
 </xs:schema>
