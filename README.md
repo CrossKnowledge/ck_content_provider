@@ -1,4 +1,4 @@
-Crossknowledge - Content Provider Data Feed
+CrossKnowledge - Content Provider Data Feed
 ===========================================
 
 This resource is for content providers in order to integrate with our
@@ -96,6 +96,7 @@ This is the architecture of the XML:
 Each table above describes one node of XML.
 
 ####Provider
+
 | Field Name                |Type        | Size | Required | Details 
 | :-------                  | :----      | :--- | :---     |:---  
 | behaveLikeCrossKnowledge  | boolean    |      | YES      | 
@@ -106,7 +107,9 @@ Each table above describes one node of XML.
 | thirdPartyContract        | boolean    |      | NO       | Default: true
 | thirdPartyOffer           | boolean    |      | NO       | Default: true
 
+
 ####Contents
+
 This node allows how much content you need, just define ``<content>`` for each one of them.
 
 | Field Name                | Type     | Size | Required | Details
@@ -144,14 +147,18 @@ This node allows how much content you need, just define ``<content>`` for each o
 | type                      | text     |      | NO       | Accepted: "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url
 | videoSubtitles            | **node** |      | NO       | [See details here]("Video Subtitles")
 
+
 ####Audiences
+
 This node allows you describe how much audiences you need, just define ``<audience>`` for each one of them.
 
 | Field Name      | Type     | Size | Required | Details
 | :-------        | :----    | :--- | :---     |:---
 | audience        |	text     |      | YES      | Eg: Leader, Senior Manager, Project Manager...
 
+
 ####Authors
+
 This node allows you describe how much authors you need, just define ``<author>`` for each one of them.
 
 | Field Name      | Type     | Size | Required | Details
@@ -167,7 +174,9 @@ This node allows you describe how much authors you need, just define ``<author>`
 | jobTitle		  |	text	 |      | NO       |
 | phone           |	text	 |      | NO       |
 
+
 ####Biographies
+
 This node allows you describe how much biographies you need, just define ``<biography>`` for each one of them.
 
 | Field Name      | Type     | Size | Required | Details
@@ -176,34 +185,43 @@ This node allows you describe how much biographies you need, just define ``<biog
 | biographyShort  |	text     | 0    | YES      |
 | biographyFull   |	text     |      | NO       |
 
+
 ####Default Thumbnail
 
 | Field Name      | Type     | Size | Required | Details
 | :-------        | :----    | :--- | :---     |:---
 | content         |	url      |      | YES      | Image which represent the provider, like a logo or a symbol. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture. 
 
+
 ####Linked Action or Essential Tips
+
 This node allows you describe how much tips you need, just define ``<code>`` for each one of them.
 
 | Field Name      | Type     | Size | Required | Details
 | :-------        | :----    | :--- | :---     |:---
 | code            |	text     |      | YES      |
 
+
 ####Tags
+
 This node allows you describe how much tags you need, just define ``<tag>`` for each one of them.
 
 | Field Name | Type  | Size | Required | Details
 | :-------   | :---- | :--- | :---     |:---
 | tag        | text  |      | YES      |
 
+
 ####Themes
+
 This node allows you describe how much themes you need, just define ``<theme>`` for each one of them.
 
 | Field Name | Type  | Size | Required | Details
 | :-------   | :---- | :--- | :---     |:---
 | theme      | text  |      | YES      | This element can be used for a more detailed categorization using character ">". Eg: Main Theme > SubTheme > ...
 
+
 ####Video Subtitles
+
 This node allows you describe how much themes you need, just define ``<videoSubtitle>`` for each one of them.
 
 | Field Name    | Type  | Size | Required | Details
