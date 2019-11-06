@@ -84,8 +84,8 @@ This is the architecture of the XML:
 | Node                                                          | Required | Allow Multiple Nodes | Details                        |
 | :-------                                                      | :----    | :---                 | :---                               
 | catalog                                                       | YES      | NO                   | The main node |
-| catalog > provider [(see details here)]("Providers")          | YES      | NO                   | The provider details |
-| catalog > contents [(see details here)]("Contents")           | YES      | YES - content        | The contents of the specified provider |
+| catalog > provider [(see details here)](#providers)           | YES      | NO                   | The provider details |
+| catalog > contents [(see details here)](#contents)            | YES      | YES - content        | The contents of the specified provider |
 | catalog > contents > content > audiences                      | YES      | YES - audience       | Describe the audiences of the content |
 | catalog > contents > content > videoSubtitles                 | YES      | YES - videoSubtitle  | Describe the subtitles of videos |
 | catalog > contents > content > tags                           | NO       | YES - tag            | Describe the tags of the content |
@@ -95,7 +95,7 @@ This is the architecture of the XML:
 
 Each table above describes one node of XML.
 
-#### Provider
+#### Providers
 
 | Field Name                |Type        | Size | Required | Details 
 | :-------                  | :----      | :--- | :---     |:---  
@@ -103,7 +103,7 @@ Each table above describes one node of XML.
 | description               | text       | 256  | YES      | Short description about company, content, etc |
 | name                      | text       |      | YES      | Name of the provider
 | picture                   | url        |      | YES      | Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png. 
-| defaultThumbnail          | **node**   |      | YES      | [See details here]("Default Thumbnail")
+| defaultThumbnail          | **node**   |      | YES      | [See details here](#default-thumbnail)
 | thirdPartyContract        | boolean    |      | NO       | Default: true
 | thirdPartyOffer           | boolean    |      | NO       | Default: true
 
@@ -114,7 +114,7 @@ This node allows how much content you need, just define ``<content>`` for each o
 
 | Field Name                | Type     | Size | Required | Details
 | :-------                  | :----    | :--- | :---     |:---   
-| audiences                 | **node** |      | YES      | [See details here]("Audiences")
+| audiences                 | **node** |      | YES      | [See details here](#audiences)
 | description               | text     |      | YES      | 
 | locale                    | text     |      |	YES      | Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
 | refId                     | text     | 45   | YES      | Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
@@ -126,14 +126,14 @@ This node allows how much content you need, just define ``<content>`` for each o
 | additionalData            | text     |      | NO       |
 | alternateUrl              | url      |      | NO       |
 | archiveList               | int      |      | NO       | Accept: 0 or 1. Default: 1
-| authors                   | **node** |      | NO       | [See details here]("Authors")
+| authors                   | **node** |      | NO       | [See details here](#authors)
 | blackList                 | int      |      | NO       | Accept: 0 or 1. Default: 1
 | course                    | text     |      | NO       |
 | detailedcontent           | text     |      | NO       |
 | duration                  | int      |      | NO       | In minutes. Eg: 10, 20, 130..
 | level                     | int      | 1    | NO       | Accepted: 1, 2 or 3
-| linkedActionTips          | **node** |      | NO       | [See details here]("Linked Action or Essential Tips")
-| linkedEssential           | **node** |      | NO       | [See details here]("Linked Action or Essential Tips")
+| linkedActionTips          | **node** |      | NO       | [See details here](#linked-action-or-essential-tips)
+| linkedEssential           | **node** |      | NO       | [See details here](#linked-action-or-essential-tips)
 | objectives                | text     |      | NO       |
 | publicationDate           | date     |      | NO       | **Format: YYYY-mm-dd** / First publication date. Creation date to help versions control.
 | publisher                 | text     |      | NO       | 
@@ -141,11 +141,11 @@ This node allows how much content you need, just define ``<content>`` for each o
 | scoreinprogress           | text     |      | NO       | 
 | subtitle                  | text     |      | NO       | 
 | subtype                   | text     |      | NO       | If the content is categorized, put category here
-| tags                      | **node** |      | NO       | [See details here]("Tags")
+| tags                      | **node** |      | NO       | [See details here](#tags)
 | thumbnail                 | url      |      | NO       | Absolute or relative url. To relative url, the url should be relative to this XML. Eg: with this XML URL(http://somesite.com/PATH_TO_XML/catalog.xml), the URL for this image should be "PATH_TO_XML/content_thumbnail/someimage.png"
-| themes                    | **node** |      | NO       | [See details here]("Themes")
+| themes                    | **node** |      | NO       | [See details here](#themes)
 | type                      | text     |      | NO       | Accepted: "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url
-| videoSubtitles            | **node** |      | NO       | [See details here]("Video Subtitles")
+| videoSubtitles            | **node** |      | NO       | [See details here](#video-subtitles)
 
 
 #### Audiences
@@ -165,7 +165,7 @@ This node allows you describe how much authors you need, just define ``<author>`
 | :-------        | :----    | :--- | :---     |:---
 | lastName		  |	text	 |      | YES      |
 | authorThumbnail |	text	 |      | NO       | Absolute or relative url. To relative url, the url should be relative to this XML. with this XML URL(http://somesite.com/PATH_TO_XML/catalog.xml), the URL for this image should be "PATH_TO_XML/content_thumbnail/someimage.png"
-| biographies     |	**node** |      | NO       | [See details here]("Biographies")
+| biographies     |	**node** |      | NO       | [See details here](#biographies)
 | company         |	text	 |      | NO       |
 | competencies    |	text	 |      | NO       |
 | customGuid      |	text	 |      | NO       |
