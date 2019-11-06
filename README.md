@@ -95,7 +95,7 @@ This is the architecture of the XML:
 
 Each table above describes one node of XML.
 
-####Provider
+#### Provider
 
 | Field Name                |Type        | Size | Required | Details 
 | :-------                  | :----      | :--- | :---     |:---  
@@ -108,7 +108,7 @@ Each table above describes one node of XML.
 | thirdPartyOffer           | boolean    |      | NO       | Default: true
 
 
-####Contents
+#### Contents
 
 This node allows how much content you need, just define ``<content>`` for each one of them.
 
@@ -148,7 +148,7 @@ This node allows how much content you need, just define ``<content>`` for each o
 | videoSubtitles            | **node** |      | NO       | [See details here]("Video Subtitles")
 
 
-####Audiences
+#### Audiences
 
 This node allows you describe how much audiences you need, just define ``<audience>`` for each one of them.
 
@@ -157,7 +157,7 @@ This node allows you describe how much audiences you need, just define ``<audien
 | audience        |	text     |      | YES      | Eg: Leader, Senior Manager, Project Manager...
 
 
-####Authors
+#### Authors
 
 This node allows you describe how much authors you need, just define ``<author>`` for each one of them.
 
@@ -175,7 +175,7 @@ This node allows you describe how much authors you need, just define ``<author>`
 | phone           |	text	 |      | NO       |
 
 
-####Biographies
+#### Biographies
 
 This node allows you describe how much biographies you need, just define ``<biography>`` for each one of them.
 
@@ -186,14 +186,14 @@ This node allows you describe how much biographies you need, just define ``<biog
 | biographyFull   |	text     |      | NO       |
 
 
-####Default Thumbnail
+#### Default Thumbnail
 
 | Field Name      | Type     | Size | Required | Details
 | :-------        | :----    | :--- | :---     |:---
 | content         |	url      |      | YES      | Image which represent the provider, like a logo or a symbol. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture. 
 
 
-####Linked Action or Essential Tips
+#### Linked Action or Essential Tips
 
 This node allows you describe how much tips you need, just define ``<code>`` for each one of them.
 
@@ -202,7 +202,7 @@ This node allows you describe how much tips you need, just define ``<code>`` for
 | code            |	text     |      | YES      |
 
 
-####Tags
+#### Tags
 
 This node allows you describe how much tags you need, just define ``<tag>`` for each one of them.
 
@@ -211,7 +211,7 @@ This node allows you describe how much tags you need, just define ``<tag>`` for 
 | tag        | text  |      | YES      |
 
 
-####Themes
+#### Themes
 
 This node allows you describe how much themes you need, just define ``<theme>`` for each one of them.
 
@@ -220,7 +220,7 @@ This node allows you describe how much themes you need, just define ``<theme>`` 
 | theme      | text  |      | YES      | This element can be used for a more detailed categorization using character ">". Eg: Main Theme > SubTheme > ...
 
 
-####Video Subtitles
+#### Video Subtitles
 
 This node allows you describe how much themes you need, just define ``<videoSubtitle>`` for each one of them.
 
