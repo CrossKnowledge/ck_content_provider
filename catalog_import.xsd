@@ -13,11 +13,9 @@
 
 	<xs:complexType name="providerType">
 		<xs:all>
-			<xs:element type="xs:string" name="name"/>
-			<xs:element type="xs:string" name="description" minOccurs="0"/>
-			<xs:element type="xs:string" name="picture" minOccurs="0"/>
-			<xs:element type="xs:string" name="behaveLikeCrossKnowledge" minOccurs="0"/>
-			<xs:element type="xs:string" name="trackingPropagation" minOccurs="0"/>
+			<xs:element type="xs:string"            name="name"/>
+			<xs:element type="xs:string"            name="description"      minOccurs="0"/>
+			<xs:element type="xs:string"            name="picture"          minOccurs="0"/>
 			<xs:element type="defaultThumbnailType" name="defaultThumbnail" minOccurs="0"/>
 		</xs:all>
 	</xs:complexType>
@@ -36,35 +34,50 @@
 
 	<xs:complexType name="contentType">
 		<xs:all>
-			<xs:element type="nonEmptyString" name="refId"/>
-			<xs:element type="nonEmptyString" name="refIdVersion"/>
-			<xs:element type="xs:string" name="title"/>
-			<xs:element type="xs:string" name="subtitle" minOccurs="0"/>
-			<xs:element type="nonEmptyString" name="locale"/>
-			<xs:element type="xs:string" name="description" minOccurs="0"/>
-			<xs:element type="xs:string" name="summary" minOccurs="0"/>
-			<xs:element type="xs:string" name="summaryShort" minOccurs="0"/>
-			<xs:element type="xs:string" name="type" minOccurs="0"/>
-			<xs:element type="xs:string" name="subtype" minOccurs="0"/>
-			<xs:element type="xs:string" name="runtime" minOccurs="0"/>
-			<xs:element type="xs:string" name="url"/>
-			<xs:element type="xs:string" name="alternateUrl" minOccurs="0"/>
-			<xs:element type="xs:string" name="publicationDate" minOccurs="0"/>
-			<xs:element type="xs:string" name="thumbnail" minOccurs="0"/>
-			<xs:element type="xs:string" name="audience" minOccurs="0"/>
-			<xs:element type="xs:string" name="objectives" minOccurs="0"/>
-			<xs:element type="xs:string" name="duration" minOccurs="0"/>
-			<xs:element type="xs:string" name="course" minOccurs="0"/>
-			<xs:element type="tagsType" name="tags" minOccurs="0"/>
-			<xs:element type="themesType" name="themes" minOccurs="0"/>
-			<xs:element type="authorsType" name="authors" minOccurs="0"/>
-			<xs:element type="xs:string" name="additionalData" minOccurs="0"/>
-			<xs:element type="subtitlesType" name="videoSubtitles" minOccurs="0"/>
-			<xs:element type="xs:string" name="audiences" minOccurs="0"/>
-			<xs:element type="xs:string" name="level" minOccurs="0"/>
-			<xs:element type="xs:string" name="scoreinprogress" minOccurs="0"/>
-			<xs:element type="xs:string" name="detailedcontent" minOccurs="0"/>
-			<xs:element type="xs:string" name="archiveList" minOccurs="0"/>
+			<xs:element type="nonEmptyString"       name="locale"/>
+			<xs:element type="nonEmptyString"       name="refId"/>
+			<xs:element type="nonEmptyString"       name="refIdVersion"/>
+			<xs:element type="xs:string"            name="title"/>
+			<xs:element type="xs:string"            name="url"/>
+			<xs:element type="xs:string"            name="additionalData"   minOccurs="0"/>
+			<xs:element type="xs:string"            name="alternateUrl"     minOccurs="0"/>
+			<xs:element type="xs:string"            name="archiveList"      minOccurs="0"/>
+			<xs:element type="xs:string"            name="audiences"        minOccurs="0"/>
+			<xs:element type="authorsType"          name="authors"          minOccurs="0"/>
+			<xs:element type="xs:string"            name="blackList"        minOccurs="0"/>
+			<xs:element type="xs:string"            name="course"           minOccurs="0"/>
+			<xs:element type="xs:string" 	        name="description"      minOccurs="0"/>
+			<xs:element type="xs:string"            name="detailedcontent"  minOccurs="0"/>
+			<xs:element type="xs:string"            name="duration"         minOccurs="0"/>
+			<xs:element type="linkedEssentialType"  name="linkedEssentials" minOccurs="0"/>
+			<xs:element type="linkedActionTipsType" name="linkedActionTips" minOccurs="0"/>
+			<xs:element type="xs:string"            name="level"            minOccurs="0"/>
+			<xs:element type="xs:string"            name="objectives"       minOccurs="0"/>
+			<xs:element type="xs:string"            name="publicationDate"  minOccurs="0"/>
+			<xs:element type="xs:string"            name="publisher"        minOccurs="0"/>
+			<xs:element type="xs:string"            name="runtime"          minOccurs="0"/>
+			<xs:element type="xs:string"            name="scoreinprogress"  minOccurs="0"/>
+			<xs:element type="xs:string"            name="subtitle"         minOccurs="0"/>
+			<xs:element type="xs:string"            name="subtype"          minOccurs="0"/>
+			<xs:element type="xs:string" 	        name="summary"          minOccurs="0"/>
+			<xs:element type="xs:string"            name="summaryShort"     minOccurs="0"/>
+			<xs:element type="tagsType"             name="tags"             minOccurs="0"/>
+			<xs:element type="themesType"           name="themes"           minOccurs="0"/>
+			<xs:element type="xs:string"            name="thumbnail"        minOccurs="0"/>
+			<xs:element type="xs:string"            name="type"             minOccurs="0"/>
+			<xs:element type="subtitlesType"        name="videoSubtitles"   minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="linkedEssentialType">
+		<xs:all>
+			<xs:element type="xs:string" name="code" minOccurs="0"/>
+		</xs:all>
+	</xs:complexType>
+
+	<xs:complexType name="linkedActionTipsType">
+		<xs:all>
+			<xs:element type="xs:string" name="code" minOccurs="0"/>
 		</xs:all>
 	</xs:complexType>
 
@@ -83,7 +96,7 @@
 	<xs:complexType name="localeType">
 		<xs:simpleContent>
 			<xs:extension base="xs:string">
-				<xs:attribute name="locale" type="xs:string" use="optional" />
+				<xs:attribute name="locale" type="xs:string" />
 			</xs:extension>
 		</xs:simpleContent>
 	</xs:complexType>
@@ -108,27 +121,27 @@
 
 	<xs:complexType name="authorType">
 		<xs:sequence>
-			<xs:element type="xs:string" name="firstName" minOccurs="0"/>
-			<xs:element type="xs:string" name="lastName" minOccurs="1"/>
-			<xs:element type="xs:string" name="email" minOccurs="0"/>
-			<xs:element type="xs:string" name="jobTitle" minOccurs="0"/>
-			<xs:element type="xs:string" name="company" minOccurs="0"/>
-			<xs:element type="xs:string" name="phone" minOccurs="0"/>
-			<xs:element type="xs:string" name="authorThumbnail" minOccurs="0"/>
-			<xs:element type="xs:string" name="customGuid" minOccurs="0"/>
-			<xs:element type="biographiesType" name="biographies" minOccurs="0"/>
+			<xs:element type="xs:string"       name="lastName"/>
+			<xs:element type="xs:string"       name="firstName"       minOccurs="0"/>
+			<xs:element type="xs:string"       name="email"           minOccurs="0"/>
+			<xs:element type="xs:string"       name="jobTitle"        minOccurs="0"/>
+			<xs:element type="xs:string"       name="company"         minOccurs="0"/>
+			<xs:element type="xs:string"       name="phone"           minOccurs="0"/>
+			<xs:element type="xs:string"       name="authorThumbnail" minOccurs="0"/>
+			<xs:element type="xs:string"       name="customGuid"      minOccurs="0"/>
+			<xs:element type="biographiesType" name="biographies"     minOccurs="0"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="biographiesType">
 		<xs:sequence>
-			<xs:element type="biographyType" name="biography" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element type="biographyType" name="biography" maxOccurs="unbounded"/>
 		</xs:sequence>
 	</xs:complexType>
 
 	<xs:complexType name="biographyType">
 		<xs:sequence>
-			<xs:element type="xs:string" name="locale" minOccurs="1"/>
+			<xs:element type="xs:string" name="locale"/>
 			<xs:element type="xs:string" name="biographyFull" minOccurs="0"/>
 			<xs:element type="xs:string" name="biographyShort" minOccurs="0"/>
 		</xs:sequence>
