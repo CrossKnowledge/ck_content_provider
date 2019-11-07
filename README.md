@@ -16,14 +16,13 @@ Format of the content
 
 Metadata and presentation
 -------------------------
-The metadata should be presented as an XML file. You'll find the XML Schema [here](blob/master/catalog_import.xsd).
+The metadata should be presented as an XML file. You'll find the XML Schema [here](catalog_import.xsd).
 
 ### Example
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
     <provider>
-        <behaveLikeCrossKnowledge>true</behaveLikeCrossKnowledge>
         <description>Content from LCMS Content</description>
         <defaultThumbnail>
             <content>crossknowledge.gif</content>
@@ -97,136 +96,134 @@ Each table above describes one node of XML.
 
 #### Providers
 
-| Field Name                |Type        | Size | Required | Details 
-| :-------                  | :----      | :--- | :---     |:---  
-| behaveLikeCrossKnowledge  | boolean    |      | YES      | 
-| description               | text       | 256  | YES      | Short description about company, content, etc |
-| name                      | text       |      | YES      | Name of the provider
-| picture                   | url        |      | YES      | Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png. 
-| defaultThumbnail          | **node**   |      | YES      | [See details here](#default-thumbnail)
-| thirdPartyContract        | boolean    |      | NO       | Default: true
-| thirdPartyOffer           | boolean    |      | NO       | Default: true
+| Field Name                |Type        | Required | Details 
+| :-------                  | :----      | :---     |:---  
+| description               | text       | YES      | Short description about company, content... 
+| name                      | text       | YES      | Name of the provider
+| picture                   | url        | YES      | Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png. 
+| defaultThumbnail          | **node**   | YES      | [See details here](#default-thumbnail)
 
 
 #### Contents
 
 This node allows how much content you need, just define ``<content>`` for each one of them.
+**NOTE:** There are some conditions for the content, specially for SCORM, audios and videos. Click [here](https://developers.crossknowledge.com/third-party-prerequisites.html) to more information.
 
-| Field Name                | Type     | Size | Required | Details
-| :-------                  | :----    | :--- | :---     |:---   
-| audiences                 | **node** |      | YES      | [See details here](#audiences)
-| description               | text     |      | YES      | 
-| locale                    | text     |      |	YES      | Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
-| refId                     | text     | 45   | YES      | Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
-| refIdVersion              | text     | 45   | YES      | Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2...
-| summary                   | text     |      | YES      |
-| summaryShort              | text     |      | YES      |
-| title                     | text     |      | YES      | Unicity not required but highly recommended
-| url                       | text     |      | YES      |
-| additionalData            | text     |      | NO       |
-| alternateUrl              | url      |      | NO       |
-| archiveList               | int      |      | NO       | Accept: 0 or 1. Default: 1
-| authors                   | **node** |      | NO       | [See details here](#authors)
-| blackList                 | int      |      | NO       | Accept: 0 or 1. Default: 1
-| course                    | text     |      | NO       |
-| detailedcontent           | text     |      | NO       |
-| duration                  | int      |      | NO       | In minutes. Eg: 10, 20, 130..
-| level                     | int      | 1    | NO       | Accepted: 1, 2 or 3
-| linkedActionTips          | **node** |      | NO       | [See details here](#linked-action-or-essential-tips)
-| linkedEssential           | **node** |      | NO       | [See details here](#linked-action-or-essential-tips)
-| objectives                | text     |      | NO       |
-| publicationDate           | date     |      | NO       | **Format: YYYY-mm-dd** / First publication date. Creation date to help versions control.
-| publisher                 | text     |      | NO       | 
-| runtime                   | text     |      | NO       | Accepted: "CKLM_SCORM" => Scorm<br/> "CKLM_FILE" => Reading document, PDF, Image, DOC<br/> "link_lo_guid" => Website, url
-| scoreinprogress           | text     |      | NO       | 
-| subtitle                  | text     |      | NO       | 
-| subtype                   | text     |      | NO       | If the content is categorized, put category here
-| tags                      | **node** |      | NO       | [See details here](#tags)
-| thumbnail                 | url      |      | NO       | Absolute or relative url. To relative url, the url should be relative to this XML. Eg: with this XML URL(http://somesite.com/PATH_TO_XML/catalog.xml), the URL for this image should be "PATH_TO_XML/content_thumbnail/someimage.png"
-| themes                    | **node** |      | NO       | [See details here](#themes)
-| type                      | text     |      | NO       | Accepted: "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url
-| videoSubtitles            | **node** |      | NO       | [See details here](#video-subtitles)
+| Field Name                | Type     | Required | Details
+| :-------                  | :----    | :---     |:---   
+| audiences                 | **node** | YES      | [See details here](#audiences)
+| description               | text     | YES      | Legacy, should be empty. Use **summary** instead
+| locale                    | text     | YES      | Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc. 
+| refId                     | text     | YES      | Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available. Length: 45
+| refIdVersion              | text     | YES      | Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2... Length: 45
+| summary                   | text     | YES      | Explain this content
+| summaryShort              | text     | YES      | Explain this content but in few words
+| title                     | text     | YES      | Unicity not required but highly recommended
+| url                       | text     | YES      | The URL of the content, preferred to be at High Definition. The content will be downloaded just once.
+| additionalData            | text     | NO       | 
+| alternateUrl              | url      | NO       | The URL of the content, preferred to be at Low Definition. The content will be downloaded just once.
+| archiveList               | int      | NO       | Accept: 0 or 1. Default: 1
+| authors                   | **node** | NO       | [See details here](#authors)
+| blackList                 | int      | NO       | Accept: 0 or 1. Default: 1
+| course                    | text     | NO       | 
+| detailedcontent           | text     | NO       | Content description details
+| duration                  | int      | NO       | The duration of the content. In minutes. Eg: 10, 20, 130...
+| level                     | int      | NO       | Lenght: 1. Accepted: 1, 2 or 3
+| linkedActionTips          | **node** | NO       | [See details here](#linked-action-tips-or-linked-essential)
+| linkedEssential           | **node** | NO       | [See details here](#linked-action-tips-or-linked-essential)
+| objectives                | text     | NO       | Content purpose/objective
+| publicationDate           | date     | NO       | **Format: YYYY-mm-dd** / First publication date. Creation date to help versions control.
+| publisher                 | text     | NO       | 
+| runtime                   | text     | NO       | Accepted:<br/>"CKLM_SCORM" => Scorm<br/> "CKLM_VIDEO" => Video<br/> "CKLM_AICC" => AICC <br/> "CKLM_FILE" => Reading document, PDF, Image, DOC<br/> "link_lo_guid" => Website, url
+| scoreinprogress           | text     | NO       | Content scorm option to save progress score variable (value = Y)
+| subtitle                  | text     | NO       | The content's subtitle
+| subtype                   | text     | NO       | If the content is categorized, put category here
+| tags                      | **node** | NO       | [See details here](#tags)
+| thumbnail                 | url      | NO       | Absolute or relative url. To relative url, the url should be relative to this XML. Eg: with this XML URL(http://somesite.com/PATH_TO_XML/catalog.xml), the URL for this image should be "PATH_TO_XML/content_thumbnail/someimage.png"
+| themes                    | **node** | NO       | [See details here](#themes)
+| type                      | text     | NO       | Accepted: "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url
+| videoSubtitles            | **node** | NO       | [See details here](#video-subtitles)
 
 
 #### Audiences
 
 This node allows you describe how much audiences you need, just define ``<audience>`` for each one of them.
 
-| Field Name      | Type     | Size | Required | Details
-| :-------        | :----    | :--- | :---     |:---
-| audience        |	text     |      | YES      | Eg: Leader, Senior Manager, Project Manager...
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| audience        |	text     | YES      | Eg: Leader, Senior Manager, Project Manager...
 
 
 #### Authors
 
 This node allows you describe how much authors you need, just define ``<author>`` for each one of them.
 
-| Field Name      | Type     | Size | Required | Details
-| :-------        | :----    | :--- | :---     |:---
-| lastName		  |	text	 |      | YES      |
-| authorThumbnail |	text	 |      | NO       | Absolute or relative url. To relative url, the url should be relative to this XML. with this XML URL(http://somesite.com/PATH_TO_XML/catalog.xml), the URL for this image should be "PATH_TO_XML/content_thumbnail/someimage.png"
-| biographies     |	**node** |      | NO       | [See details here](#biographies)
-| company         |	text	 |      | NO       |
-| competencies    |	text	 |      | NO       |
-| customGuid      |	text	 |      | NO       |
-| email           |	text	 |      | NO       |
-| firstName       |	text	 |      | NO       |
-| jobTitle		  |	text	 |      | NO       |
-| phone           |	text	 |      | NO       |
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| lastName		  |	text	 | YES      | The author's last name
+| authorThumbnail |	text	 | NO       | Absolute or relative url. To relative url, the url should be relative to this XML. with this XML URL(http://somesite.com/PATH_TO_XML/catalog.xml), the URL for this image should be "PATH_TO_XML/content_thumbnail/someimage.png"
+| biographies     |	**node** | NO       | [See details here](#biographies)
+| company         |	text	 | NO       | The company that author works/owns
+| competencies    |	text	 | NO       | The author's competencies at job
+| customGuid      |	text	 | NO       |
+| email           |	text	 | NO       | Author's email
+| firstName       |	text	 | NO       | The author's first name
+| jobTitle		  |	text	 | NO       | Author's job title
+| phone           |	text	 | NO       | Author's phone for contact
 
 
 #### Biographies
 
 This node allows you describe how much biographies you need, just define ``<biography>`` for each one of them.
 
-| Field Name      | Type     | Size | Required | Details
-| :-------        | :----    | :--- | :---     |:---
-| locale          |	text     | 5    | YES      | Language of biography. Should be in this format: language-COUNTRY. Eg: en-US, fr-FR
-| biographyShort  |	text     | 0    | YES      |
-| biographyFull   |	text     |      | NO       |
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| locale          |	text     | YES      | Language of biography. Should be in this format: language-COUNTRY. Eg: en-US, fr-FR. Lenght: 5
+| biographyShort  |	text     | YES      | Few words about the author
+| biographyFull   |	text     | NO       | Describe with more details the biography
 
 
 #### Default Thumbnail
 
-| Field Name      | Type     | Size | Required | Details
-| :-------        | :----    | :--- | :---     |:---
-| content         |	url      |      | YES      | Image which represent the provider, like a logo or a symbol. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture. 
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| content         |	url      | YES      | Image which represent the provider, like a logo or a symbol. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture. 
 
 
-#### Linked Action or Essential Tips
+#### Linked Action Tips or Linked Essential
 
 This node allows you describe how much tips you need, just define ``<code>`` for each one of them.
 
-| Field Name      | Type     | Size | Required | Details
-| :-------        | :----    | :--- | :---     |:---
-| code            |	text     |      | YES      |
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| code            |	text     | YES      |
 
 
 #### Tags
 
 This node allows you describe how much tags you need, just define ``<tag>`` for each one of them.
 
-| Field Name | Type  | Size | Required | Details
-| :-------   | :---- | :--- | :---     |:---
-| tag        | text  |      | YES      |
+| Field Name | Type  | Required | Details
+| :-------   | :---- | :---     |:---
+| tag        | text  | YES      | Tags for the content
 
 
 #### Themes
 
 This node allows you describe how much themes you need, just define ``<theme>`` for each one of them.
 
-| Field Name | Type  | Size | Required | Details
-| :-------   | :---- | :--- | :---     |:---
-| theme      | text  |      | YES      | This element can be used for a more detailed categorization using character ">". Eg: Main Theme > SubTheme > ...
+| Field Name | Type  | Required | Details
+| :-------   | :---- | :---     |:---
+| theme      | text  | YES      | This element can be used for a more detailed categorization using character ">". Eg: Main Theme > SubTheme > ...
 
 
 #### Video Subtitles
 
 This node allows you describe how much themes you need, just define ``<videoSubtitle>`` for each one of them.
 
-| Field Name    | Type  | Size | Required | Details
-| :-------      | :---- | :--- | :---     |:---
-| videoSubtitle | text  |      | YES      | Eg: legend_en-US.srt
+| Field Name    | Type  | Required | Details
+| :-------      | :---- | :---     |:---
+| videoSubtitle | text  | YES      | Eg: legend_en-US.srt
 
 
 How to send my metadata and my content
@@ -241,36 +238,40 @@ The catalog should be created with the date of the creation in the name followin
 
 	catalog-YYYYmmddHHMMSS.xml
 
-**The hours need to be in the 24h format.**
-
-Example : catalog-20160403132400.xml for a catalog created on the 3rd of April 2016, at 1:24:00 pm.
+Example : catalog-20191101150659.xml for a catalog created on the November 1st 2019 at 15:06:09.
 	
 Our system will process the files and put them in a backup directory afterwards.
 
 #### Reference to the content
 
-The references in the XML file can be either absolute (http://domain/path/to/file.png) or relative to the position of the catalog file. If you have an directory structure like this
-	FTP/
-		- catalog-20160403132400.xml
-		- Scorm/
-			- first_course.zip
-			- second_course.zip
-		- Img/
-			- course_1_thumb.jpg
-			- course_2_thumb.jpg
+The references in the XML file can be either absolute (http://domain/path/to/file.png) or relative to the position of the catalog file. 
+If you have an directory structure like this
+
+
+```
+FTP/
+    - catalog-20191104132400.xml
+    - SCORM/
+        - first_course.zip
+        - second_course.zip
+    - Img/
+        - course_1_thumbnail.jpg
+        - course_2_thumbnail.jpg
+```
+
 
 Then your catalog should look like that:
 ```xml
 	...
 	<content>
 		<title>Course 1 title here</title>
-		<thumbnail>Img/course_1_thumb.jpg</thumbnail>
+		<thumbnail>Img/course_1_thumbnail.jpg</thumbnail>
 		<url>Scorm/first_course.zip</url>
 		...
 	</content>
 	<content>
 		<title>Title of the Second course</title>
-		<thumbnail>Img/course_2_thumb.jpg</thumbnail>
+		<thumbnail>Img/course_2_thumbnail.jpg</thumbnail>
 		<url>Scorm/second_course.zip</url>
 		...
 	</content>
@@ -280,7 +281,8 @@ Then your catalog should look like that:
 It's recommended to use simplify the name of the assets to use only basic characters:
 	[a-zA-Z0-9_\-\.]
 
-**NOTE**: The URLs that specify images and documents will be downloaded and will not be requested anymore. If you need to update this content, please update the URL and import again.
+**NOTE**: The URLs that specify images and documents will be downloaded and will not be requested anymore. 
+If you need to update this content, please update the URL and import again.
 
 How to test my catalog.xml
 ------------------------------
