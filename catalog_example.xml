@@ -8,13 +8,14 @@
 			<content>crossknowledge.gif</content>
 		</defaultThumbnail>
 	</provider>
+	
 	<contents>
 		<content>
 			<refId>OJMH390</refId>
 			<refIdVersion>OJMH390_v1</refIdVersion>
 			<title>How to Give a Constructive Feedback</title>
 			<locale>en-US</locale>
-			<description>This course will start out reviewing traditional CSS3 Layout, including flexbox, regions, and multicolumn layout. Then we will discuss WinJS controls that support additional UI layout options, including the ListView, SemanticZoom, and ViewBox controls.  We will see that the ListView displays items in grid or list layout, whereas the SemanticZoom supports zoom between two semantic levels, and the ViewBox allows for dynamically scaling single child element to fill available space without changing aspect ratio.</description>
+			<description></description>
 			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
 			<type>i</type>
 			<subtype>Interactive</subtype>
@@ -52,6 +53,52 @@
 					</biographies>
 				</author>
 			</authors>			
+		</content>
+
+		<content>
+			<refId>VID001</refId>
+			<refIdVersion>VID001_v3</refIdVersion>
+			<title>How to speak in public</title>
+			<locale>en-US</locale>
+			<type>v</type>
+			<subtype>Leaders Videocast</subtype>
+			<runtime>CKLM_VIDEO</runtime>
+			<thumbnail>input/files/VID0001_thumbnail.jpg</thumbnail>
+			<url>input/files/VID0001_HQ.mp4</url>
+			<alternateUrl>input/files/VID0001_LQ.mp4</alternateUrl>
+			<description></description>
+			<summary>In this presentation, you will learn how to speak in public with more confidence than never.</summary>
+			<tags>
+				<tag>Carrer</tag>
+				<tag>Communication</tag>
+			</tags>
+			<themes>
+				<theme>Communication>Learn to speak in public</theme>
+				<theme>Performance Management>Development of personal efficacy</theme>
+			</themes>
+			<authors>
+				<author>
+					<firstName>John</firstName>
+					<lastName>Doe</lastName>
+					<biographies>
+						<biography>
+							<locale>en-US</locale>
+							<biographyFull>
+								John Doe is a experienced writer, with 100+ published books in your 20 years carrer.
+							</biographyFull>
+							<biographyShort>Writer with 100+ published books.</biographyShort>
+						</biography>
+					</biographies>
+				</author>
+			</authors>
+			<duration>7</duration>
+			<videoSubtitles>
+				<videoSubtitle>input/files/VID001_en-US.vtt</videoSubtitle>
+				<videoSubtitle>input/files/VID001_fr-FR.vtt</videoSubtitle>
+			</videoSubtitles>
+			<audience>Leader, manager, project manager</audience>
+			<level>2</level>
+			<publicationDate>2019-09-21</publicationDate>
 		</content>
 	</contents>
 </catalog>

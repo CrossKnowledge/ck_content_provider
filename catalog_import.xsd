@@ -45,9 +45,6 @@
 			<xs:element type="xs:string"            name="audiences"        minOccurs="0"/>
 			<xs:element type="authorsType"          name="authors"          minOccurs="0"/>
 			<xs:element type="xs:string"            name="blackList"        minOccurs="0"/>
-			<xs:element type="xs:string"            name="course"           minOccurs="0"/>
-			<xs:element type="xs:string" 	        name="description"      minOccurs="0"/>
-			<xs:element type="xs:string"            name="detailedcontent"  minOccurs="0"/>
 			<xs:element type="xs:string"            name="duration"         minOccurs="0"/>
 			<xs:element type="linkedEssentialType"  name="linkedEssentials" minOccurs="0"/>
 			<xs:element type="linkedActionTipsType" name="linkedActionTips" minOccurs="0"/>
