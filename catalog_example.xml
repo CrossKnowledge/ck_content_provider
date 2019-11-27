@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
+	<!-- Provider information -->
 	<provider>
 		<name>CrossKnowledge Library</name>
 		<description>Content from LCMS Content</description>
@@ -10,95 +11,125 @@
 	</provider>
 	
 	<contents>
+		<!-- Content with bare minimum information -->
 		<content>
-			<refId>OJMH390</refId>
-			<refIdVersion>OJMH390_v1</refIdVersion>
-			<title>How to Give a Constructive Feedback</title>
-			<locale>en-US</locale>
-			<description></description>
-			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
-			<type>i</type>
-			<subtype>Interactive</subtype>
-			<runtime>CKLM_SCORM</runtime>
-			<url>http://path/to/object/OJMH390.zip</url>
-			<alternateUrl></alternateUrl>
-			<publicationDate>2014-02-14</publicationDate>
-			<tags>
-				<tag>Skills Management</tag>
-				<tag>Training</tag>
-				<tag>Evaluation</tag>
-				<tag>Learning</tag>
-			</tags>
-			<thumbnail>img/8AI5.PNG</thumbnail>
-			<themes>
-				<theme>Developing Autonomy > Identifying the problem</theme>
-			</themes>
-			<duration>30</duration>
-			<audiences></audiences>
-			<level>1</level>
-			<objectives></objectives>
-			<additionalData></additionalData>
-			<authors>
-				<author>
-					<firstName>Peter</firstName>
-					<lastName>Thorsteinson</lastName>
-					<company></company>
-					<authorThumbnail>img/thorsteinson.png</authorThumbnail>
-					<biographies>
-						<biography>
-							<locale>en-US</locale>
-							<biographyFull>Peter Thornsteinson has been...</biographyFull>
-							<biographyShort>LearnNowOnline Microsoft Expert</biographyShort>
-						</biography>
-					</biographies>
-				</author>
-			</authors>			
+			<locale>fr-FR</locale>
+			<refId>ITEM0001</refId>
+			<refIdVersion>ITEM0001_v1</refIdVersion>
+			<title>Content Title</title>
+			<url>contents/item0001.zip</url>
 		</content>
 
+		<!-- SCORM content example -->
 		<content>
-			<refId>VID001</refId>
-			<refIdVersion>VID001_v3</refIdVersion>
-			<title>How to speak in public</title>
-			<locale>en-US</locale>
-			<type>v</type>
-			<subtype>Leaders Videocast</subtype>
-			<runtime>CKLM_VIDEO</runtime>
-			<thumbnail>input/files/VID0001_thumbnail.jpg</thumbnail>
-			<url>input/files/VID0001_HQ.mp4</url>
-			<alternateUrl>input/files/VID0001_LQ.mp4</alternateUrl>
-			<description></description>
-			<summary>In this presentation, you will learn how to speak in public with more confidence than never.</summary>
-			<tags>
-				<tag>Carrer</tag>
-				<tag>Communication</tag>
-			</tags>
-			<themes>
-				<theme>Communication>Learn to speak in public</theme>
-				<theme>Performance Management>Development of personal efficacy</theme>
-			</themes>
+			<additionalData>This content contains sensitive informtion.</additionalData>
+			<alternateUrl>http://my-provider-website.com/contents/SCORM0001.zip</alternateUrl>
+			<archiveList>1</archiveList>
+			<audiences>Leader, Project Manager</audiences>
 			<authors>
 				<author>
+					<lastName>Smith</lastName>
 					<firstName>John</firstName>
-					<lastName>Doe</lastName>
-					<biographies>
+					<email>john.smith@talkingtimes.com</email>
+					<jobTitle>Life Coach</jobTitle>
+					<company>Talking times</company>
+					<phone>+1 777-555-7500</phone>
+					<authorThumbnail>thumbnails/author001.png</authorThumbnail> 
+					<customGuid>AUTHOR001</customGuid>
+					 <biographies>
 						<biography>
 							<locale>en-US</locale>
-							<biographyFull>
-								John Doe is a experienced writer, with 100+ published books in your 20 years carrer.
-							</biographyFull>
-							<biographyShort>Writer with 100+ published books.</biographyShort>
+							<biographyFull>John Smith is an orator, with an amazing teaching skill.</biographyFull>
+							<biographyShort>John Smith is an orator.</biographyShort>
 						</biography>
 					</biographies>
 				</author>
 			</authors>
-			<duration>7</duration>
+			<blackList>1</blackList>
+			<duration>15</duration>
+			<level>1</level>
+			<locale>en-US</locale>
+			<objectives>Learn how to speak in public.</objectives>
+			<publicationDate>2017-11-29</publicationDate>
+			<publisher>Sax'n'Trumpet Records</publisher>
+			<refId>SCORM0001</refId>
+			<refIdVersion>SCORM0001_v1</refIdVersion>
+			<runtime>CKLM_SCORM</runtime>
+			<scoreinprogress>Y</scoreinprogress>
+			<subtitle>Master the art of Oratory</subtitle>
+			<summary>Learn how to speak in public with confidence and be sure that your message was picked up by everyone.</summary>
+			<summaryShort>Learn how to speak in public.</summaryShort>
+			<tags>
+				<tag>Oratory</tag>
+				<tag>Speak</tag>
+			</tags>
+			<thumbnail>thumbnails/SCORM0001.jpg</thumbnail>
+			<themes>
+				<theme>Oratory > Public speaking</theme>
+				<theme>Oratory > Confidence</theme>
+			</themes>
+			<title>Speaking in public</title>
+			<type>i</type>
+			<url>contents/SCORM0001.zip</url>
+		</content>
+
+		<!-- Video content example -->
+		<content>
+			<additionalData>This video contains sensitive informtion.</additionalData>
+			<alternateUrl>http://my-provider-website.com/contents/video0001.mp4</alternateUrl>
+			<archiveList>1</archiveList>
+			<audiences>Guitarist, Saxophonist, Singer</audiences>
+			<authors>
+				<author>
+					<lastName>Doe</lastName>
+					<firstName>Jane</firstName>
+					<email>jane.doe@saxntrumpetrecords.com</email>
+					<jobTitle>Music Producer</jobTitle>
+					<company>Sax'n'Trumpet Records</company>
+					<phone>+1 555-777-5700</phone>
+					<authorThumbnail>thumbnails/author002.png</authorThumbnail>
+					<customGuid>AUTHOR002</customGuid>
+					<biographies>
+						<biography>
+							<locale>en-US</locale>
+							<biographyFull>Jane Doe is a reputed music producer, focused in Jazz groups. In the last 20 years, she helped to launch hundreds of bands to glory.</biographyFull>
+							<biographyShort>Jane Doe is a music producer.</biographyShort>
+						</biography>
+					</biographies>
+				</author>
+			</authors>
+			<blackList>1</blackList>
+			<duration>25</duration>
+			<level>3</level>
+			<locale>en-US</locale>
+			<objectives>How to be a famous musician.</objectives>
+			<publicationDate>2019-03-21</publicationDate>
+			<publisher>Sax'n'Trumpet Records</publisher>
+			<refId>VID0001</refId>
+			<refIdVersion>VID0001_v1</refIdVersion>
+			<runtime>CKLM_VIDEO</runtime>
+			<subtitle>Tips on how to stand out from other musicians</subtitle>
+			<subtype>Videocast</subtype>
+			<summary>In this video you will get tips to stand out from other musicians and bands. It's hosted by Jane Doe, a reputed music producer.</summary>
+			<summaryShort>Get tips on how to stand out from other musicians and be a famous musician.</summaryShort>
+			<tags>
+				<tag>Music</tag>
+				<tag>Jazz</tag>
+				<tag>Band</tag>
+			</tags>
+			<thumbnail>thumbnails/video0001.jpg</thumbnail>
+			<themes>
+				<theme>How to be a successful musician</theme>
+				<theme>Jazz band</theme>
+			</themes>
+			<title>Content Title</title>
+			<type>v</type>
+			<url>contents/video0001.mp4</url>
 			<videoSubtitles>
-				<videoSubtitle>input/files/VID001_en-US.vtt</videoSubtitle>
-				<videoSubtitle>input/files/VID001_fr-FR.vtt</videoSubtitle>
+				<videoSubtitle>contents/video0001_en-US.vtt</videoSubtitle>
+				<videoSubtitle>contents/video0001_fr-FR.srt</videoSubtitle>
+				<videoSubtitle>contents/video0001_pt-BR.srt</videoSubtitle>
 			</videoSubtitles>
-			<audience>Leader, manager, project manager</audience>
-			<level>2</level>
-			<publicationDate>2019-09-21</publicationDate>
 		</content>
 	</contents>
 </catalog>

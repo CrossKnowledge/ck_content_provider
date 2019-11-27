@@ -21,6 +21,6 @@ filenames = sys.argv[1:]
 
 for filename in filenames:
     if validate(xmlparser, filename):
-        print "%s validates" % filename
+        print("%s validates" % filename)
     else:
-        print "%s doesn't validate" % filename
+        print("%s doesn't validate" % filename)
