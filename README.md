@@ -186,13 +186,13 @@ Then your catalog should look like that:
  <content>
   <title>Course 1 title here</title>
   <thumbnail>Img/course_1_thumbnail.jpg</thumbnail>
-  <url>Scorm/first_course.zip</url>
+  <url>SCORM/first_course.zip</url>
   ...
  </content>
  <content>
   <title>Title of the Second course</title>
   <thumbnail>Img/course_2_thumbnail.jpg</thumbnail>
-  <url>Scorm/second_course.zip</url>
+  <url>SCORM/second_course.zip</url>
   ...
  </content>
  ...
