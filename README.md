@@ -12,11 +12,11 @@ Supported content formats
 * Interactive content: SCORM packages(1.2 and 2004) and AICC packages, in *zip* format;
 * Reading documents;
 * Video Files: *mp4* or *flv* format, with subtitles in *srt* or *vtt* format;
-* External Website URLs
+* External website URLs
 
 **NOTE:**
 Multi SCO is not supported for SCORM content. In case you have a longer course, it should be splitted into multiple zip files with a single SCO.
-As the contents are imported in a Crossknowledge learning path, it's not an issue.
+As the contents are imported in a CrossKnowledge learning path, it's not an issue.
 
 Metadata and presentation
 -------------------------
@@ -58,23 +58,23 @@ This node allows how much content you need, just define ``<content>`` for each o
 | Field Name                | Type     | Required | Details
 | :-------                  | :----    | :---     |:---
 | locale                    | text     | YES      | Language of content. Better if uses the language-Country format. Eg: en-US, fr-FR, pt-BR, etc. [See supported language codes](#supported-language-codes)
-| refId                     | text     | YES      | Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available. Length: 45
-| refIdVersion              | text     | YES      | Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2... Length: 45
+| refId                     | text     | YES      | Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available. Max size: 45
+| refIdVersion              | text     | YES      | Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2... Max size: 45
 | title                     | text     | YES      | Unicity not required but highly recommended
-| url                       | text     | YES      | The URL of the content, preferred to be at High Definition. The content will be downloaded just once.
+| url                       | text     | YES      | The URL of the content, preferred to be at high definition. The content will be downloaded just once.
 | additionalData            | text     | NO       | Additional information related to the content.
-| alternateUrl              | url      | NO       | The URL of the content, preferred to be at Low Definition. The content will be downloaded just once.
+| alternateUrl              | url      | NO       | The URL of the content, preferred to be at low definition. The content will be downloaded just once.
 | archiveList               | int      | NO       | Accept: 0 or 1. Default: 1
 | audience                  | text     | NO       | Eg: Leader, Senior Manager, Project Manager...
 | authors                   | **node** | NO       | [See details here](#authors)
 | blackList                 | int      | NO       | Accept: 0 or 1. Default: 1
 | duration                  | int      | NO       | The duration of the content, in minutes. Eg: 10, 20, 130...
 | level                     | int      | NO       | Complexity level of the content:<br/>1 = novice<br/>2 = intemediate<br/>3 = advanced
-| objectives                | text     | NO       | Content purpose/objective. Single paragraph, without break-lines.
+| objectives                | text     | NO       | Content purpose or objective. Single paragraph, without break-lines.
 | publicationDate           | date     | NO       | **Format: YYYY-mm-dd** / First publication date. Creation date to help versions control.
-| publisher                 | text     | NO       | Publisher name of the content
-| runtime                   | text     | NO       | "CKLM_SCORM" => Scorm<br/> "CKLM_VIDEO" => Video<br/> "CKLM_AICC" => AICC <br/> "CKLM_FILE" => Reading document, PDF, Image, Office document<br/> "link_lo_guid" => Website, url
-| scoreinprogress           | text     | NO       | Content scorm option to save progress score variable (value = Y)
+| publisher                 | text     | NO       | Name of the publisher of the contents.
+| runtime                   | text     | YES      | "CKLM_SCORM" => SCORM<br/> "CKLM_VIDEO" => Video<br/> "CKLM_AICC" => AICC <br/> "CKLM_FILE" => Reading document, PDF, Image, Office document<br/> "link_lo_guid" => website, url
+| scoreinprogress           | text     | NO       | Content SCORM option to save progress score variable (value = Y)
 | subtitle                  | text     | NO       | The content's subtitle
 | subtype                   | text     | NO       | If the content is categorized, put category here
 | summary                   | text     | NO       | Explain this content. Single paragraph, without break-lines.
@@ -82,7 +82,7 @@ This node allows how much content you need, just define ``<content>`` for each o
 | tags                      | **node** | NO       | [See details here](#tags)
 | thumbnail                 | url      | NO       | Content thumbnail, in *png*, *jpg*, *gif* or *svg* format.
 | themes                    | **node** | NO       | [See details here](#themes)
-| type                      | text     | NO       | "a" => Audio<br/>"d" => Document to download<br/>"p" => Image<br/>"i" => Interactive content (Scorm)<br/>"r" => Reading document<br/>"v" => Video<br/>"w" => Website, URL
+| type                      | text     | NO       | "a" => Audio<br/>"d" => Document to download<br/>"p" => Image<br/>"i" => Interactive content (SCORM)<br/>"r" => Reading document<br/>"v" => Video<br/>"w" => website, URL
 | videoSubtitles            | **node** | NO       | [See details here](#video-subtitles)
 
 #### Authors
@@ -111,7 +111,7 @@ This node allows you describe how much biographies you need, just define ``<biog
 
 | Field Name      | Type     | Required | Details
 | :-------        | :----    | :---     |:---
-| locale          | text     | YES      | Language of biography. Should be in this format: language-COUNTRY. Eg: en-US, fr-FR. Lenght: 5
+| locale          | text     | YES      | Language of biography. Should be in this format: language-COUNTRY. Eg: en-US, fr-FR. Max size: 5
 | biographyShort  | text     | YES      | Few words about the author
 | biographyFull   | text     | NO       | Describe with more details the biography
 
