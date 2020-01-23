@@ -25,7 +25,7 @@
 			<additionalData>This content contains sensitive informtion.</additionalData>
 			<alternateUrl>http://my-provider-website.com/contents/SCORM0001.zip</alternateUrl>
 			<archiveList>1</archiveList>
-			<audiences>Leader, Project Manager</audiences>
+			<audience>Leader, Project Manager</audience>
 			<authors>
 				<author>
 					<lastName>Smith</lastName>
@@ -78,7 +78,7 @@
 			<additionalData>This video contains sensitive informtion.</additionalData>
 			<alternateUrl>http://my-provider-website.com/contents/video0001.mp4</alternateUrl>
 			<archiveList>1</archiveList>
-			<audiences>Guitarist, Saxophonist, Singer</audiences>
+			<audience>Guitarist, Saxophonist, Singer</audience>
 			<authors>
 				<author>
 					<lastName>Doe</lastName>

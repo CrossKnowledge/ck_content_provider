@@ -42,7 +42,7 @@
 			<xs:element type="xs:string"            name="additionalData"   minOccurs="0"/>
 			<xs:element type="xs:string"            name="alternateUrl"     minOccurs="0"/>
 			<xs:element type="xs:string"            name="archiveList"      minOccurs="0"/>
-			<xs:element type="xs:string"            name="audiences"        minOccurs="0"/>
+			<xs:element type="xs:string"            name="audience"         minOccurs="0"/>
 			<xs:element type="authorsType"          name="authors"          minOccurs="0"/>
 			<xs:element type="xs:string"            name="blackList"        minOccurs="0"/>
 			<xs:element type="xs:string"            name="duration"         minOccurs="0"/>

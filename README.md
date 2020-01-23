@@ -65,7 +65,7 @@ This node allows how much content you need, just define ``<content>`` for each o
 | additionalData            | text     | NO       | Additional information related to the content.
 | alternateUrl              | url      | NO       | The URL of the content, preferred to be at Low Definition. The content will be downloaded just once.
 | archiveList               | int      | NO       | Accept: 0 or 1. Default: 1
-| audiences                 | **node** | NO       | [See details here](#audiences)
+| audience                  | text     | NO       | Eg: Leader, Senior Manager, Project Manager...
 | authors                   | **node** | NO       | [See details here](#authors)
 | blackList                 | int      | NO       | Accept: 0 or 1. Default: 1
 | duration                  | int      | NO       | The duration of the content, in minutes. Eg: 10, 20, 130...
@@ -84,14 +84,6 @@ This node allows how much content you need, just define ``<content>`` for each o
 | themes                    | **node** | NO       | [See details here](#themes)
 | type                      | text     | NO       | "a" => Audio<br/>"d" => Document to download<br/>"p" => Image<br/>"i" => Interactive content (Scorm)<br/>"r" => Reading document<br/>"v" => Video<br/>"w" => Website, URL
 | videoSubtitles            | **node** | NO       | [See details here](#video-subtitles)
-
-#### Audiences
-
-This node allows you describe how much audiences you need, just define ``<audience>`` for each one of them.
-
-| Field Name      | Type     | Required | Details
-| :-------        | :----    | :---     |:---
-| audience        | text     | YES      | Eg: Leader, Senior Manager, Project Manager...
 
 #### Authors
 
