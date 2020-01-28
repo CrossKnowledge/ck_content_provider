@@ -64,10 +64,10 @@ This node allows how much content you need, just define ``<content>`` for each o
 | url                       | text     | YES      | The URL of the content, preferred to be at high definition. The content will be downloaded just once.
 | additionalData            | text     | NO       | Additional information related to the content.
 | alternateUrl              | url      | NO       | The URL of the content, preferred to be at low definition. The content will be downloaded just once.
-| archiveList               | int      | NO       | Accept: 0 or 1. Default: 1
+| archiveList               | int      | NO       | The content in the archive list is considered outdated and by default is no longer available for licenses. If the owner wants the content can be available again. Use 0 if the content isn't in archive list and 1 if it is.
 | audience                  | text     | NO       | Eg: Leader, Senior Manager, Project Manager...
 | authors                   | **node** | NO       | [See details here](#authors)
-| blackList                 | int      | NO       | Accept: 0 or 1. Default: 1
+| blackList                 | int      | NO       | The content will not be available for the licenses use. Use 0 if the content isn't in black list and 1 if it is.
 | duration                  | int      | NO       | The duration of the content, in minutes. Eg: 10, 20, 130...
 | level                     | int      | NO       | Complexity level of the content:<br/>1 = novice<br/>2 = intemediate<br/>3 = advanced
 | objectives                | text     | NO       | Content purpose or objective. Single paragraph, without break-lines.
