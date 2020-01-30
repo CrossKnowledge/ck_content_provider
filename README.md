@@ -10,13 +10,14 @@ Supported content formats
 * Audio in *mp3* format
 * Downloadable documents: *pdf*, *docx*, *xlsx*, images, etc;
 * Interactive content: SCORM packages(1.2 and 2004) and AICC packages, in *zip* format;
-* Reading documents;
+* Reading documents: *pdf*, *docx*, *doc*, *txt*;
 * Video Files: *mp4* or *flv* format, with subtitles in *srt* or *vtt* format;
 * External website URLs
 
 **NOTE:**
-Multi SCO is not supported for SCORM content. In case you have a longer course, it should be splitted into multiple zip files with a single SCO.
-As the contents are imported in a CrossKnowledge learning path, it's not an issue.
+* Multi SCO is not supported for SCORM content. In case you have a longer course, it should be splitted into multiple zip files with a single SCO.
+* As the contents are imported in a CrossKnowledge learning path, it's not an issue.
+* There are some conditions for the content, specially for SCORM, audios and videos. Click [here](https://developers.crossknowledge.com/third-party-prerequisites.html) to more information.
 
 Metadata and presentation
 -------------------------
@@ -46,109 +47,107 @@ Each table above describes one node of XML.
 | :-------                  | :----      | :---     |:---  
 | description               | text       | YES      | Short description about provider.
 | name                      | text       | YES      | Name of the provider
-| picture                   | url        | YES      | Provider picture, in *png*, *jpg*, *gif* or *svg* format.
+| picture                   | url        | YES      | Provider picture. <br/>**File type:** JPG or PNG (no transparency); <br/> **Resolution:** <br/> Widht: min 220px, max 719px; <br/> Height: min 60px, max 300px;
 | defaultThumbnail          | **node**   | YES      | [See details here](#default-thumbnail)
 
 #### Contents
 
-This node allows how much content you need, just define ``<content>`` for each one of them.
-
-**NOTE:** There are some conditions for the content, specially for SCORM, audios and videos. Click [here](https://developers.crossknowledge.com/third-party-prerequisites.html) to more information.
+This node allows how much content you need, just define ``<content>`` for each one of them. There are some [notes](#supported-content-formats) that needs to be considered.
 
 | Field Name                | Type     | Required | Details
 | :-------                  | :----    | :---     |:---
 | locale                    | text     | YES      | Language of content. Better if uses the language-Country format. Eg: en-US, fr-FR, pt-BR, etc. [See supported language codes](#supported-language-codes)
-| refId                     | text     | YES      | Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available. Max size: 45
-| refIdVersion              | text     | YES      | Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2... Max size: 45
+| refId                     | text     | YES      | refID stands for "Reference ID", which becomes the learning resource ID code. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available. Max size: 45.
+| refIdVersion              | text     | YES      | refIdVersion stads for "Reference ID Version", which becomes the learning resource version ID code. Max size: 45
+| runtime                   | text     | YES      | "CKLM_SCORM" => SCORM<br/> "CKLM_VIDEO" => Video<br/> "CKLM_AICC" => AICC <br/> "CKLM_FILE" => Reading document, PDF, Image, Office document<br/> "link_lo_guid" => website, URL<br/>See [Supported Content Formats](#supported-content-formats) for more information.
+| subtype                   | text     | YES      | If the content is categorized, put category here
 | title                     | text     | YES      | Unicity not required but highly recommended
-| url                       | text     | YES      | The URL of the content, preferred to be at high definition. The content will be downloaded just once.
+| type                      | text     | YES      | "a" => Audio<br/>"d" => Document to download<br/>"p" => Image<br/>"i" => Interactive content (SCORM)<br/>"r" => Reading document<br/>"v" => Video<br/>"w" => website, URL
+| url                       | text     | YES      | The URL of the content, preferred to be at high definition video. The content will be downloaded just once.
 | additionalData            | text     | NO       | Additional information related to the content.
-| alternateUrl              | url      | NO       | The URL of the content, preferred to be at low definition. The content will be downloaded just once.
+| alternateUrl              | url      | NO       | The URL of the content, preferred to be at low definition video. The content will be downloaded just once.
 | archiveList               | int      | NO       | The content in the archive list is considered outdated and by default is no longer available for licenses. If the owner wants the content can be available again. Use 0 if the content isn't in archive list and 1 if it is.
-| audience                  | text     | NO       | Eg: Leader, Senior Manager, Project Manager...
+| audience                  | text     | NO       | Eg: Leader, Senior Manager, Project Manager.
 | authors                   | **node** | NO       | [See details here](#authors)
 | blackList                 | int      | NO       | The content will not be available for the licenses use. Use 0 if the content isn't in black list and 1 if it is.
-| duration                  | int      | NO       | The duration of the content, in minutes. Eg: 10, 20, 130...
+| duration                  | int      | NO       | The duration of the content, in minutes. Eg: 10, 20, 130.
 | level                     | int      | NO       | Complexity level of the content:<br/>1 = novice<br/>2 = intemediate<br/>3 = advanced
 | objectives                | text     | NO       | Content purpose or objective. Single paragraph, without break-lines.
 | publicationDate           | date     | NO       | **Format: YYYY-mm-dd** / First publication date. Creation date to help versions control.
 | publisher                 | text     | NO       | Name of the publisher of the contents.
-| runtime                   | text     | YES      | "CKLM_SCORM" => SCORM<br/> "CKLM_VIDEO" => Video<br/> "CKLM_AICC" => AICC <br/> "CKLM_FILE" => Reading document, PDF, Image, Office document<br/> "link_lo_guid" => website, url
-| scoreinprogress           | text     | NO       | Content SCORM option to save progress score variable (value = Y)
+| scoreinprogress           | text     | NO       | Content SCORM option to save progress score variable (value = Y or N, which means "Yes" or "No")
 | subtitle                  | text     | NO       | The content's subtitle
-| subtype                   | text     | NO       | If the content is categorized, put category here
 | summary                   | text     | NO       | Explain this content. Single paragraph, without break-lines.
 | summaryShort              | text     | NO       | Explain this content but in few words
 | tags                      | **node** | NO       | [See details here](#tags)
-| thumbnail                 | url      | NO       | Content thumbnail, in *png*, *jpg*, *gif* or *svg* format.
+| thumbnail                 | url      | NO       | Content thumbnail.<br/>**Format**: *PNG*, *JPG* or *SVG*.<br/>**Resolution**:<br/>Widht: min 220px, max 640px;<br/>Height: min 60px, max 300px;
 | themes                    | **node** | NO       | [See details here](#themes)
-| type                      | text     | NO       | "a" => Audio<br/>"d" => Document to download<br/>"p" => Image<br/>"i" => Interactive content (SCORM)<br/>"r" => Reading document<br/>"v" => Video<br/>"w" => website, URL
 | videoSubtitles            | **node** | NO       | [See details here](#video-subtitles)
 
 #### Authors
 
-This node allows you describe how much authors you need, just define ``<author>`` for each one of them.
+This node allows as many nodes as needed, just define ``<author>`` for each learning resource.
 
 **Important**: Fields inside *author* node should follow the order listed above
 
 | Field Name      | Type     | Required | Details
 | :-------        | :----    | :---     |:---
 | lastName        | text     | YES      | The author's last name
-| authorThumbnail | text     | NO       | Author thumbnail, in *png*, *jpg*, *gif* or *svg* format.
+| authorThumbnail | text     | NO       | Author thumbnail<br/>**Format**: *PNG*, *JPG* or *SVG*.<br/>**Resolution**:<br/>Widht: min 220px, max 640px;<br/>Height: min 60px, max 300px;
 | biographies     | **node** | NO       | [See details here](#biographies)
-| company         | text     | NO       | The company that author works/owns
+| company         | text     | NO       | The author's company
 | customGuid      | text     | NO       | Unique identifier for Author. If ommited, system create one based on provider and author names
 | email           | text     | NO       | Author's email
 | firstName       | text     | NO       | The author's first name
 | jobTitle        | text     | NO       | Author's job title
-| phone           | text     | NO       | Author's phone for contact
+| phone           | text     | NO       | Author's phone number for contact
 
 #### Biographies
 
-This node allows you describe how much biographies you need, just define ``<biography>`` for each one of them.
+This node allows as many nodes as needed, just define ``<biography>`` for each author.
 
 **Important**: Fields inside *biography* node should follow the order listed above
 
 | Field Name      | Type     | Required | Details
 | :-------        | :----    | :---     |:---
-| locale          | text     | YES      | Language of biography. Should be in this format: language-COUNTRY. Eg: en-US, fr-FR. Max size: 5
-| biographyShort  | text     | YES      | Few words about the author
-| biographyFull   | text     | NO       | Describe with more details the biography
+| locale          | text     | YES      | Language of biography. Max size: 5. [See supported language codes](#supported-language-codes)
+| biographyShort  | text     | YES      | Few words about the author. Single paragraph, without break-lines.
+| biographyFull   | text     | NO       | Describe with more details the biography. Single paragraph, without break-lines.
 
 #### Default Thumbnail
 
 | Field Name      | Type     | Required | Details
 | :-------        | :----    | :---     |:---
-| content         | url      | YES      | Image that represents the provider, like a logo or a symbol. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px. Accepted format are: *png*, *jpg*, *gif* and *svg*.
+| content         | url      | YES      | Image that represents the provider, like a logo or a symbol. <br> **File type:** JPG or PNG with 640px x 360px resolution.
 
 #### Tags
 
-This node allows you describe how much tags you need, just define ``<tag>`` for each one of them.
+This node allows as many nodes as needed, just define ``<tag>`` for each content.
 
 | Field Name | Type  | Required | Details
 | :-------   | :---- | :---     |:---
-| tag        | text  | YES      | Tags for the content
+| tag        | text  | YES      | Metadata on a piece of content. A tag is a term that describes the content, by calling out related topics and synonyms for terms in the content title, for example. Content can have a wide set of tags.
 
 #### Themes
 
-This node allows you describe how much themes you need, just define ``<theme>`` for each one of them.
+This node allows as many nodes as needed, just define ``<theme>`` for each learning resource.
 
 | Field Name | Type  | Required | Details
 | :-------   | :---- | :---     |:---
-| theme      | text  | YES      | This element can be used for a more detailed categorization using character ">". Eg: Main Theme > SubTheme > ...
+| theme      | text  | YES      | This element can be used for a more detailed categorization using character ">". Eg: Main Theme > SubTheme > ...<br/> Metadata on a piece of content. A theme is one term that tries to summarize the content as a whole or call out the one topic that the content is about. Usually content does not have a lot of themes, mostly one, sometimes 2.
 
 #### Video Subtitles
 
-This node allows you include subtitles for Video Type Content. Multiple language subtitles can be included, just define ``<videoSubtitle>`` for each one of them.
+This node allows as many nodes as needed, just define ``<videoSubtitle>`` for each learning resource. Multiple language subtitles can be included.
 
 | Field Name    | Type  | Required | Details
 | :-------      | :---- | :---     |:---
-| videoSubtitle | text  | YES      | Eg: legend_en-US.srt
+| videoSubtitle | text  | YES      | Format: *SRT* or *VTT*.
 
 How to send my metadata and my content
 --------------------------
 
-We will provide you with an SFTP server where you will send the content and the metadata files.
+For uploading your content and metadata files, please request your CrossKnowledge contact. We can then decide to provide you with an SFTP server for you to use for uploading the files.
 
 ### Naming Scheme
 
