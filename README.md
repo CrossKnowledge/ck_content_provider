@@ -47,8 +47,8 @@ Each table above describes one node of XML.
 | :-------                  | :----      | :---     |:---  
 | description               | text       | YES      | Short description about provider.
 | name                      | text       | YES      | Name of the provider
-| picture                   | url        | YES      | Provider picture. <br/>**File type:** JPG or PNG (no transparency); <br/> **Resolution:** <br/> Widht: min 220px, max 719px; <br/> Height: min 60px, max 300px;
 | defaultThumbnail          | **node**   | YES      | [See details here](#default-thumbnail)
+| picture                   | url        | YES      | Provider picture. <br/>**File type:** JPG or PNG (no transparency); <br/> **Resolution:** <br/> Widht: min 220px, max 719px; <br/> Height: min 60px, max 300px;
 
 #### Contents
 

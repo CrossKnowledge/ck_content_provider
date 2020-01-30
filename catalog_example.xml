@@ -2,12 +2,12 @@
 <catalog>
 	<!-- Provider information -->
 	<provider>
-		<name>CrossKnowledge Library</name>
 		<description>Content from LCMS Content</description>
-		<picture>http://example.ck/crossknowledge.gif</picture>
+		<name>CrossKnowledge Library</name>
 		<defaultThumbnail>
-			<content>crossknowledge.gif</content>
+			<content>crossknowledge.png</content>
 		</defaultThumbnail>
+		<picture>http://example.ck/crossknowledge.png</picture>
 	</provider>
 	
 	<contents>
@@ -16,12 +16,23 @@
 			<locale>fr-FR</locale>
 			<refId>ITEM0001</refId>
 			<refIdVersion>ITEM0001_v1</refIdVersion>
+			<runtime>CKLM_SCORM</runtime>
+			<subtype>i</subtype>
 			<title>Content Title</title>
+			<type>i</type>
 			<url>contents/item0001.zip</url>
 		</content>
 
 		<!-- SCORM content example -->
 		<content>
+			<locale>en-US</locale>
+			<refId>SCORM0001</refId>
+			<refIdVersion>SCORM0001_v1</refIdVersion>
+			<runtime>CKLM_SCORM</runtime>
+			<subtype>i</subtype>
+			<title>Speaking in public</title>
+			<type>i</type>
+			<url>contents/SCORM0001.zip</url>
 			<additionalData>This content contains sensitive informtion.</additionalData>
 			<alternateUrl>http://my-provider-website.com/contents/SCORM0001.zip</alternateUrl>
 			<archiveList>1</archiveList>
@@ -29,32 +40,28 @@
 			<authors>
 				<author>
 					<lastName>Smith</lastName>
-					<firstName>John</firstName>
-					<email>john.smith@talkingtimes.com</email>
-					<jobTitle>Life Coach</jobTitle>
-					<company>Talking times</company>
-					<phone>+1 777-555-7500</phone>
-					<authorThumbnail>thumbnails/author001.png</authorThumbnail> 
-					<customGuid>AUTHOR001</customGuid>
-					 <biographies>
+					<authorThumbnail>thumbnails/author001.png</authorThumbnail>
+					<biographies>
 						<biography>
 							<locale>en-US</locale>
 							<biographyFull>John Smith is an orator, with an amazing teaching skill.</biographyFull>
 							<biographyShort>John Smith is an orator.</biographyShort>
 						</biography>
 					</biographies>
+					<company>Talking times</company>
+					<customGuid>SMITH_JOHN</customGuid>
+					<email>john.smith@talkingtimes.com</email>
+					<firstName>John</firstName>
+					<jobTitle>Life Coach</jobTitle>
+					<phone>+1 777-555-7500</phone>
 				</author>
 			</authors>
 			<blackList>1</blackList>
 			<duration>15</duration>
 			<level>1</level>
-			<locale>en-US</locale>
 			<objectives>Learn how to speak in public.</objectives>
 			<publicationDate>2017-11-29</publicationDate>
 			<publisher>Sax'n'Trumpet Records</publisher>
-			<refId>SCORM0001</refId>
-			<refIdVersion>SCORM0001_v1</refIdVersion>
-			<runtime>CKLM_SCORM</runtime>
 			<scoreinprogress>Y</scoreinprogress>
 			<subtitle>Master the art of Oratory</subtitle>
 			<summary>Learn how to speak in public with confidence and be sure that your message was picked up by everyone.</summary>
@@ -68,27 +75,26 @@
 				<theme>Oratory > Public speaking</theme>
 				<theme>Oratory > Confidence</theme>
 			</themes>
-			<title>Speaking in public</title>
-			<type>i</type>
-			<url>contents/SCORM0001.zip</url>
 		</content>
 
 		<!-- Video content example -->
 		<content>
-			<additionalData>This video contains sensitive informtion.</additionalData>
+			<locale>en-US</locale>
+			<refId>VID0001</refId>
+			<refIdVersion>VID0001_v1</refIdVersion>
+			<runtime>CKLM_VIDEO</runtime>
+			<subtype>Videocast</subtype>
+			<title>Content Title</title>
+			<type>v</type>
+			<url>contents/video0001.mp4</url>
+			<additionalData>This video contains sensitive information.</additionalData>
 			<alternateUrl>http://my-provider-website.com/contents/video0001.mp4</alternateUrl>
 			<archiveList>1</archiveList>
 			<audience>Guitarist, Saxophonist, Singer</audience>
 			<authors>
 				<author>
 					<lastName>Doe</lastName>
-					<firstName>Jane</firstName>
-					<email>jane.doe@saxntrumpetrecords.com</email>
-					<jobTitle>Music Producer</jobTitle>
-					<company>Sax'n'Trumpet Records</company>
-					<phone>+1 555-777-5700</phone>
 					<authorThumbnail>thumbnails/author002.png</authorThumbnail>
-					<customGuid>AUTHOR002</customGuid>
 					<biographies>
 						<biography>
 							<locale>en-US</locale>
@@ -96,20 +102,21 @@
 							<biographyShort>Jane Doe is a music producer.</biographyShort>
 						</biography>
 					</biographies>
+					<company>Sax'n'Trumpet Records</company>
+					<customGuid>AUTHOR002</customGuid>
+					<email>jane.doe@saxntrumpetrecords.com</email>
+					<firstName>Jane</firstName>
+					<jobTitle>Music Producer</jobTitle>
+					<phone>+1 555-777-5700</phone>
 				</author>
 			</authors>
 			<blackList>1</blackList>
 			<duration>25</duration>
 			<level>3</level>
-			<locale>en-US</locale>
 			<objectives>How to be a famous musician.</objectives>
 			<publicationDate>2019-03-21</publicationDate>
 			<publisher>Sax'n'Trumpet Records</publisher>
-			<refId>VID0001</refId>
-			<refIdVersion>VID0001_v1</refIdVersion>
-			<runtime>CKLM_VIDEO</runtime>
 			<subtitle>Tips on how to stand out from other musicians</subtitle>
-			<subtype>Videocast</subtype>
 			<summary>In this video you will get tips to stand out from other musicians and bands. It's hosted by Jane Doe, a reputed music producer.</summary>
 			<summaryShort>Get tips on how to stand out from other musicians and be a famous musician.</summaryShort>
 			<tags>
@@ -117,14 +124,11 @@
 				<tag>Jazz</tag>
 				<tag>Band</tag>
 			</tags>
-			<thumbnail>thumbnails/video0001.jpg</thumbnail>
+			<thumbnail>thumbnails/video0001.svg</thumbnail>
 			<themes>
 				<theme>How to be a successful musician</theme>
 				<theme>Jazz band</theme>
 			</themes>
-			<title>Content Title</title>
-			<type>v</type>
-			<url>contents/video0001.mp4</url>
 			<videoSubtitles>
 				<videoSubtitle>contents/video0001_en-US.vtt</videoSubtitle>
 				<videoSubtitle>contents/video0001_fr-FR.srt</videoSubtitle>
