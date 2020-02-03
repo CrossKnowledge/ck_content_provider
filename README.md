@@ -52,7 +52,7 @@ Each table above describes one node of XML.
 
 #### Contents
 
-This node allows how much content you need, just define ``<content>`` for each one of them. There are some [notes](#supported-content-formats) that needs to be considered.
+This node type allows as many nodes as needed, just define a ``<content>`` node for each learning resource. There are some [notes](#supported-content-formats) that needs to be considered.
 
 | Field Name                | Type     | Required | Details
 | :-------                  | :----    | :---     |:---
