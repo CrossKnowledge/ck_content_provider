@@ -1,57 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
+	<!-- Provider information -->
 	<provider>
-		<name>CrossKnowledge Library</name>
 		<description>Content from LCMS Content</description>
-		<picture>http://example.ck/crossknowledge.gif</picture>
+		<name>CrossKnowledge Library</name>
 		<defaultThumbnail>
-			<content>crossknowledge.gif</content>
+			<content>crossknowledge.png</content>
 		</defaultThumbnail>
+		<picture>http://example.ck/crossknowledge.png</picture>
 	</provider>
+	
 	<contents>
+		<!-- Content with bare minimum information -->
 		<content>
-			<refId>OJMH390</refId>
-			<refIdVersion>OJMH390_v1</refIdVersion>
-			<title>How to Give a Constructive Feedback</title>
-			<locale>en-US</locale>
-			<description>This course will start out reviewing traditional CSS3 Layout, including flexbox, regions, and multicolumn layout. Then we will discuss WinJS controls that support additional UI layout options, including the ListView, SemanticZoom, and ViewBox controls.  We will see that the ListView displays items in grid or list layout, whereas the SemanticZoom supports zoom between two semantic levels, and the ViewBox allows for dynamically scaling single child element to fill available space without changing aspect ratio.</description>
-			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
-			<type>i</type>
-			<subtype>Interactive</subtype>
+			<locale>fr-FR</locale>
+			<refId>ITEM0001</refId>
+			<refIdVersion>ITEM0001_v1</refIdVersion>
 			<runtime>CKLM_SCORM</runtime>
-			<url>http://path/to/object/OJMH390.zip</url>
-			<alternateUrl></alternateUrl>
-			<publicationDate>2014-02-14</publicationDate>
-			<tags>
-				<tag>Skills Management</tag>
-				<tag>Training</tag>
-				<tag>Evaluation</tag>
-				<tag>Learning</tag>
-			</tags>
-			<thumbnail>img/8AI5.PNG</thumbnail>
-			<themes>
-				<theme>Developing Autonomy > Identifying the problem</theme>
-			</themes>
-			<duration>30</duration>
-			<audiences></audiences>
-			<level>1</level>
-			<objectives></objectives>
-			<additionalData></additionalData>
+			<subtype>i</subtype>
+			<title>Content Title</title>
+			<type>i</type>
+			<url>contents/item0001.zip</url>
+		</content>
+
+		<!-- SCORM content example -->
+		<content>
+			<locale>en-US</locale>
+			<refId>SCORM0001</refId>
+			<refIdVersion>SCORM0001_v1</refIdVersion>
+			<runtime>CKLM_SCORM</runtime>
+			<subtype>i</subtype>
+			<title>Speaking in public</title>
+			<type>i</type>
+			<url>contents/SCORM0001.zip</url>
+			<additionalData>This content contains sensitive informtion.</additionalData>
+			<alternateUrl>http://my-provider-website.com/contents/SCORM0001.zip</alternateUrl>
+			<archiveList>1</archiveList>
+			<audience>Leader, Project Manager</audience>
 			<authors>
 				<author>
-					<firstName>Peter</firstName>
-					<lastName>Thorsteinson</lastName>
-					<company></company>
-					<authorThumbnail>img/thorsteinson.png</authorThumbnail>
+					<lastName>Smith</lastName>
+					<authorThumbnail>thumbnails/author001.png</authorThumbnail>
 					<biographies>
 						<biography>
 							<locale>en-US</locale>
-							<biographyFull>Peter Thornsteinson has been...</biographyFull>
-							<biographyShort>LearnNowOnline Microsoft Expert</biographyShort>
+							<biographyFull>John Smith is an orator, with an amazing teaching skill.</biographyFull>
+							<biographyShort>John Smith is an orator.</biographyShort>
 						</biography>
 					</biographies>
+					<company>Talking times</company>
+					<customGuid>SMITH_JOHN</customGuid>
+					<email>john.smith@talkingtimes.com</email>
+					<firstName>John</firstName>
+					<jobTitle>Life Coach</jobTitle>
+					<phone>+1 777-555-7500</phone>
 				</author>
-			</authors>			
+			</authors>
+			<blackList>1</blackList>
+			<duration>15</duration>
+			<level>1</level>
+			<objectives>Learn how to speak in public.</objectives>
+			<publicationDate>2017-11-29</publicationDate>
+			<publisher>Sax'n'Trumpet Records</publisher>
+			<scoreinprogress>Y</scoreinprogress>
+			<subtitle>Master the art of Oratory</subtitle>
+			<summary>Learn how to speak in public with confidence and be sure that your message was picked up by everyone.</summary>
+			<summaryShort>Learn how to speak in public.</summaryShort>
+			<tags>
+				<tag>Oratory</tag>
+				<tag>Speak</tag>
+			</tags>
+			<thumbnail>thumbnails/SCORM0001.jpg</thumbnail>
+			<themes>
+				<theme>Oratory > Public speaking</theme>
+				<theme>Oratory > Confidence</theme>
+			</themes>
+		</content>
+
+		<!-- Video content example -->
+		<content>
+			<locale>en-US</locale>
+			<refId>VID0001</refId>
+			<refIdVersion>VID0001_v1</refIdVersion>
+			<runtime>CKLM_VIDEO</runtime>
+			<subtype>Videocast</subtype>
+			<title>Content Title</title>
+			<type>v</type>
+			<url>contents/video0001.mp4</url>
+			<additionalData>This video contains sensitive information.</additionalData>
+			<alternateUrl>http://my-provider-website.com/contents/video0001.mp4</alternateUrl>
+			<archiveList>1</archiveList>
+			<audience>Guitarist, Saxophonist, Singer</audience>
+			<authors>
+				<author>
+					<lastName>Doe</lastName>
+					<authorThumbnail>thumbnails/author002.png</authorThumbnail>
+					<biographies>
+						<biography>
+							<locale>en-US</locale>
+							<biographyFull>Jane Doe is a reputed music producer, focused in Jazz groups. In the last 20 years, she helped to launch hundreds of bands to glory.</biographyFull>
+							<biographyShort>Jane Doe is a music producer.</biographyShort>
+						</biography>
+					</biographies>
+					<company>Sax'n'Trumpet Records</company>
+					<customGuid>AUTHOR002</customGuid>
+					<email>jane.doe@saxntrumpetrecords.com</email>
+					<firstName>Jane</firstName>
+					<jobTitle>Music Producer</jobTitle>
+					<phone>+1 555-777-5700</phone>
+				</author>
+			</authors>
+			<blackList>1</blackList>
+			<duration>25</duration>
+			<level>3</level>
+			<objectives>How to be a famous musician.</objectives>
+			<publicationDate>2019-03-21</publicationDate>
+			<publisher>Sax'n'Trumpet Records</publisher>
+			<subtitle>Tips on how to stand out from other musicians</subtitle>
+			<summary>In this video you will get tips to stand out from other musicians and bands. It's hosted by Jane Doe, a reputed music producer.</summary>
+			<summaryShort>Get tips on how to stand out from other musicians and be a famous musician.</summaryShort>
+			<tags>
+				<tag>Music</tag>
+				<tag>Jazz</tag>
+				<tag>Band</tag>
+			</tags>
+			<thumbnail>thumbnails/video0001.svg</thumbnail>
+			<themes>
+				<theme>How to be a successful musician</theme>
+				<theme>Jazz band</theme>
+			</themes>
+			<videoSubtitles>
+				<videoSubtitle>contents/video0001_en-US.vtt</videoSubtitle>
+				<videoSubtitle>contents/video0001_fr-FR.srt</videoSubtitle>
+				<videoSubtitle>contents/video0001_pt-BR.srt</videoSubtitle>
+			</videoSubtitles>
 		</content>
 	</contents>
 </catalog>

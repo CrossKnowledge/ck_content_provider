@@ -1,216 +1,235 @@
-Crossknowledge - Content Provider Data Feed
+CrossKnowledge - Content Provider Data Feed
 ===========================================
 
-This resource is targeted at content providers wanted to integrate with our
+This resource is for content providers in order to integrate with our
 content management system.
 
-
-Format of the content
+Supported content formats
 ---------------------
 
-At the moment, we accept these different formats:
-* Static Files : pdf, docx, xlsx, images etc.
-*  Video Files : mp4, with subtitles in srt format;
-*  Scorm Packages : 1.2 and 2004.
+* Audio in *mp3* format
+* Downloadable documents: *pdf*, *docx*, *xlsx*, images, etc;
+* Interactive content: SCORM packages(1.2 and 2004) and AICC packages, in *zip* format;
+* Reading documents: *pdf*, *docx*, *doc*, *txt*;
+* Video Files: *mp4* or *flv* format, with subtitles in *srt* or *vtt* format;
+* External website URLs
+
+**NOTE:**
+* Multi SCO is not supported for SCORM content. In case you have a longer course, it should be splitted into multiple zip files with a single SCO.
+* As the contents are imported in a CrossKnowledge learning path, it's not an issue.
+* There are some conditions for the content, specially for SCORM, audios and videos. Click [here](https://developers.crossknowledge.com/third-party-prerequisites.html) to more information.
 
 Metadata and presentation
 -------------------------
 
-The metadata should be presented as an XML file. You'll find the XML Schema in this repository (catalog\_import.xsd)
-Even if the node has no value the node must be in the catalog in right order.
+The metadata should be presented as an XML file. You'll find the XML Schema [here](catalog_import.xsd).
 
-### Presentation
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<catalog>
-	<provider>
-		<name>CrossKnowledge Library</name>
-		<description>Content from LCMS Content</description>
-		<picture>http://example.ck/crossknowledge.gif</picture>
-		<defaultThumbnail>
-			<content>crossknowledge.gif</content>
-		</defaultThumbnail>
-	</provider>
-	<contents>
-		<content>
-			<refId>OJMH390</refId>
-			<refIdVersion>OJMH390_v1</refIdVersion>
-			<title>How to Give a Constructive Feedback</title>
-			<locale>en-US</locale>
-			<description>This course will start out reviewing traditional CSS3 Layout, including flexbox, regions, and multicolumn layout. Then we will discuss WinJS controls that support additional UI layout options, including the ListView, SemanticZoom, and ViewBox controls.  We will see that the ListView displays items in grid or list layout, whereas the SemanticZoom supports zoom between two semantic levels, and the ViewBox allows for dynamically scaling single child element to fill available space without changing aspect ratio.</description>
-			<summary>Feedback can help staff members to progress and develop their skills provided it is given in the right way. This session will show you how to identify common errors and the principles of constructive feedback.</summary>
-			<type>i</type>
-			<subtype>Interactive</subtype>
-			<runtime>CKLM_SCORM</runtime>
-			<url>http://path/to/object/OJMH390.zip</url>
-			<alternateUrl></alternateUrl>
-			<publicationDate>2014-02-14</publicationDate>
-			<thumbnail>img/8AI5.PNG</thumbnail>
-			<audience></audience>
-			<objectives></objectives>
-			<duration>30</duration>
-			<level>1</level>
-			<additionalData></additionalData>
-			<tags>
-				<tag>Skills Management</tag>
-				<tag>Training</tag>
-				<tag>Evaluation</tag>
-				<tag>Learning</tag>
-			</tags>
-			<themes>
-				<theme>Developing Autonomy > Identifying the problem</theme>
-			</themes>
-			<authors>
-				<author>
-					<firstName>Peter</firstName>
-					<lastName>Thorsteinson</lastName>
-					<company></company>
-					<authorThumbnail>img/thorsteinson.png</authorThumbnail>
-					<biographies>
-						<biography>
-							<locale>en-US</locale>
-							<biographyFull>Peter Thornsteinson...</biographyFull>
-							<biographyShort>Microsoft Expert</biographyShort>
-						</biography>
-					</biographies>
-				</author>
-			</authors>			
-		</content>
-	</contents>
-</catalog>
-```
+You can check a example of a complete XML file [here](catalog_example.xml).
 
-XML content description
-------- 
-|Field/Node                                                         |Type/Format            |Size       |Required       |Description        |
-| :-------                                                          | :----                 | :---:     | :---:         |:---               |
-|**catalog**                                                        |Main node              |           |YES            |                   |
-|&nbsp; **provider**                                                |   node                |           |YES            |   Informations block about provider   |
-|&nbsp; &nbsp; name                                                 |   text                |           |YES            |                   |
-|&nbsp; &nbsp; description                                          |   text                |   256     |YES            |   Short description about company, content, etc
-|&nbsp; &nbsp; picture                                              |   url                 |suggestion: 250px X 60px. |YES |   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/someimage.png
-|&nbsp; &nbsp; thumbnail                                            |   url                 |           |              |    |	Image which represent the provider, like logo, symbol, etc. There is no limit to the thumbnail size, but we recommend a proportional image to 640x320px and follow same rule of picture.
-|&nbsp; **contents**                                                |   node                |           |YES            |
-|&nbsp; &nbsp; content                                              |   node                |           |YES            |   For each content
-|&nbsp; &nbsp; &nbsp; refId                                         |   text                |   45      |YES            |   Reference ID. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available.
-|&nbsp; &nbsp; &nbsp; refIdVersion                                  |   text                |   45      |YES            |   Reference ID Version. Represent version of content. Eg: AB22 English v1, AB22 Spanish v2, etc.
-|&nbsp; &nbsp; &nbsp; title                                         |	text				|           |	YES			|	Unicity not required but highly recommended
-|&nbsp; &nbsp; &nbsp; subtitle                                      |	text				||							|
-|&nbsp; &nbsp; &nbsp; locale                                        |	text				||							|	Language of content. Better if uses the language&nbsp;Country format. Eg: en&nbsp;US, fr&nbsp;FR, etc.
-|&nbsp; &nbsp; &nbsp; description                                   |	text				||							|Legacy, should be empty. Use **summary** instead
-|&nbsp; &nbsp; &nbsp; summary                                       |	text				||							|
-|&nbsp; &nbsp; &nbsp; type                                          |	text				||							|   Use "a" => Audio, "d" => Document to download, "p" => Image, "i" => Interactive content (Scorm), "r" => Reading document, "v" => Video, "w" => Website, Url, public file hosted at other servers, etc.
-|&nbsp; &nbsp; &nbsp; subtype                                       |	text				|           |   YES			|   If the content is categorized, put category here
-|&nbsp; &nbsp; &nbsp; runtime                                       |	text				|           |	YES			|   Use: "CKLM_SCORM" => Scorm<br/> "CKLM_FILE" => Reading document, PDF, Image, DOC<br/> "link_lo_guid" => Website, url
-|&nbsp; &nbsp; &nbsp; url                                           |	text				||							|
-|&nbsp; &nbsp; &nbsp; alternateUrl                                  |	url					||							|
-|&nbsp; &nbsp; &nbsp; publicationDate                          |   date (YYYY-mm-dd)   || YES  |   First publication date. Creation date to help versions control.
-|&nbsp; &nbsp; &nbsp; thumbnail                                     |	url					||							|   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/content_thumbnail/someimage.png
-|&nbsp; &nbsp; &nbsp; audience                                      |	text				||							|
-|&nbsp; &nbsp; &nbsp; objectives                                    |	text				||							|
-|&nbsp; &nbsp; &nbsp; duration                                      |	int					||							|	In minutes Eg. 10,20,etc.
-|&nbsp; &nbsp; &nbsp; course                                        |	text				||							|
-|&nbsp; &nbsp; &nbsp; **tags**                                      |						||							|	One or more, one per tag
-|&nbsp; &nbsp; &nbsp; &nbsp; tag(1)                                 |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; tag(n)                                 |	text				||							|
-|&nbsp; &nbsp; &nbsp; **themes**                                    |						||							|   This element can be used for a more detailed categorization using character ">". Eg. <theme>Main Theme > SubTheme > ...</theme>
-|&nbsp; &nbsp; &nbsp; &nbsp; theme(1)                               |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; theme(n)                               |	text				||							|
-|&nbsp; &nbsp; &nbsp; **authors**                                   |						||							|	One or more
-|&nbsp; &nbsp; &nbsp; &nbsp; author                                 |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; firstname                       |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; lastname				        |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; email                           |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; jobtitle				        |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; company                         |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; phone                           |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; authorThumbnail                 |	text				||							|   Absolute or relative url. To relative url, the url should be relative to this XML. Eg. XML url: http://somesite.com/PATH_TO_XML/catalog.xml, the url for this image should be PATH_TO_XML/authors_thumbnail/someimage.png
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; customGuid                      |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; competencies			        |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; authorThumbnail                 |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; **biographies**                 |						||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; biography                |						||							|	One or more
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; locale            |						||							|	Language of biography. Should be in this format: language-COUNTRY. Eg: en-US, fr-FR, etc.
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; biographyFull     |						||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; biographyShort    |						||							|
-|&nbsp; &nbsp; &nbsp; additionalData                                |	text				||							|
-|&nbsp; &nbsp; &nbsp; videoSubtitles                                |						||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (en-US)                       |	text				||							|	Eg: legend_en-US.srt
-|&nbsp; &nbsp; &nbsp; &nbsp; subtitle (fr-FR)                       |	text				||							|	Eg: legend_fr-FR.srt
-|&nbsp; &nbsp; &nbsp; audiences                                     |						||							|	One or more audience. Eg: Leader, Senior manager, project manager, etc. One audience pe tag.
-|&nbsp; &nbsp; &nbsp; &nbsp; audience (1)                           |	text				||							|
-|&nbsp; &nbsp; &nbsp; &nbsp; audience (2)                           |	text				||							|
-|&nbsp; &nbsp; &nbsp; level                                         |	int					|  1,2 or 3     |	        |
-|&nbsp; &nbsp; &nbsp; scoreinprogress                               |	text				||							|
-|&nbsp; &nbsp; &nbsp; detailedcontent                               |	text				||							|
+The encoding for XML file should be UTF-8 without BOM (Byte Order Map).
 
-How do I send my metadata and my content ?
+XML Description
+---------------
+
+This is the architecture of the XML:
+
+| Node                                                          | Required | Allow Multiple Nodes | Details
+| :-------                                                      | :----    | :---                 | :---
+| catalog                                                       | YES      | NO                   | The main node
+| catalog > provider [(see details here)](#providers)           | YES      | NO                   | The provider details
+| catalog > contents [(see details here)](#contents)            | YES      | YES - content        | The contents of the specified provider
+
+Each table above describes one node of XML.
+
+#### Providers
+
+| Field Name                |Type        | Required | Details
+| :-------                  | :----      | :---     |:---  
+| description               | text       | YES      | Short description about provider.
+| name                      | text       | YES      | Name of the provider
+| defaultThumbnail          | **node**   | YES      | [See details here](#default-thumbnail)
+| picture                   | url        | YES      | Provider picture. <br/>**File type:** JPG or PNG (no transparency); <br/> **Resolution:** <br/> Widht: min 220px, max 719px; <br/> Height: min 60px, max 300px;
+
+#### Contents
+
+This node type allows as many nodes as needed, just define a ``<content>`` node for each learning resource. There are some [notes](#supported-content-formats) that needs to be considered.
+
+| Field Name                | Type     | Required | Details
+| :-------                  | :----    | :---     |:---
+| locale                    | text     | YES      | Language of content. Better if uses the language-Country format. Eg: en-US, fr-FR, pt-BR, etc. [See supported language codes](#supported-language-codes)
+| refId                     | text     | YES      | refID stands for "Reference ID", which becomes the learning resource ID code. Must be unique for all versions of content. Eg: AB22 . The refId represents the content in all languages and versions available. Max size: 45.
+| refIdVersion              | text     | YES      | refIdVersion stads for "Reference ID Version", which becomes the learning resource version ID code. Max size: 45
+| runtime                   | text     | YES      | "CKLM_SCORM" => SCORM<br/> "CKLM_VIDEO" => Video<br/> "CKLM_AICC" => AICC <br/> "CKLM_FILE" => Reading document, PDF, Image, Office document<br/> "link_lo_guid" => website, URL<br/>See [Supported Content Formats](#supported-content-formats) for more information.
+| subtype                   | text     | YES      | If the content is categorized, put category here
+| title                     | text     | YES      | Unicity not required but highly recommended
+| type                      | text     | YES      | "a" => Audio<br/>"d" => Document to download<br/>"p" => Image<br/>"i" => Interactive content (SCORM)<br/>"r" => Reading document<br/>"v" => Video<br/>"w" => website, URL
+| url                       | text     | YES      | The URL of the content, preferred to be at high definition video. The content will be downloaded just once.
+| additionalData            | text     | NO       | Additional information related to the content.
+| alternateUrl              | url      | NO       | The URL of the content, preferred to be at low definition video. The content will be downloaded just once.
+| archiveList               | int      | NO       | The content in the archive list is considered outdated and by default is no longer available for licenses. If the owner wants the content can be available again. Use 0 if the content isn't in archive list and 1 if it is.
+| audience                  | text     | NO       | Eg: Leader, Senior Manager, Project Manager.
+| authors                   | **node** | NO       | [See details here](#authors)
+| blackList                 | int      | NO       | The content will not be available for the licenses use. Use 0 if the content isn't in black list and 1 if it is.
+| duration                  | int      | NO       | The duration of the content, in minutes. Eg: 10, 20, 130.
+| level                     | int      | NO       | Complexity level of the content:<br/>1 = novice<br/>2 = intemediate<br/>3 = advanced
+| objectives                | text     | NO       | Content purpose or objective. Single paragraph, without break-lines.
+| publicationDate           | date     | NO       | **Format: YYYY-mm-dd** / First publication date. Creation date to help versions control.
+| publisher                 | text     | NO       | Name of the publisher of the contents.
+| scoreinprogress           | text     | NO       | Content SCORM option to save progress score variable (value = Y or N, which means "Yes" or "No")
+| subtitle                  | text     | NO       | The content's subtitle
+| summary                   | text     | NO       | Explain this content. Single paragraph, without break-lines.
+| summaryShort              | text     | NO       | Explain this content but in few words
+| tags                      | **node** | NO       | [See details here](#tags)
+| thumbnail                 | url      | NO       | Content thumbnail.<br/>**Format**: *PNG*, *JPG* or *SVG*.<br/>**Resolution**:<br/>Widht: min 220px, max 640px;<br/>Height: min 60px, max 300px;
+| themes                    | **node** | NO       | [See details here](#themes)
+| videoSubtitles            | **node** | NO       | [See details here](#video-subtitles)
+
+#### Authors
+
+This node allows as many nodes as needed, just define ``<author>`` for each learning resource.
+
+**Important**: Fields inside *author* node should follow the order listed above
+
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| lastName        | text     | YES      | The author's last name
+| authorThumbnail | text     | NO       | Author thumbnail<br/>**Format**: *PNG*, *JPG* or *SVG*.<br/>**Resolution**:<br/>Widht: min 220px, max 640px;<br/>Height: min 60px, max 300px;
+| biographies     | **node** | NO       | [See details here](#biographies)
+| company         | text     | NO       | The author's company
+| customGuid      | text     | NO       | Unique identifier for Author. If ommited, system create one based on provider and author names
+| email           | text     | NO       | Author's email
+| firstName       | text     | NO       | The author's first name
+| jobTitle        | text     | NO       | Author's job title
+| phone           | text     | NO       | Author's phone number for contact
+
+#### Biographies
+
+This node allows as many nodes as needed, just define ``<biography>`` for each author.
+
+**Important**: Fields inside *biography* node should follow the order listed above
+
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| locale          | text     | YES      | Language of biography. Max size: 5. [See supported language codes](#supported-language-codes)
+| biographyShort  | text     | YES      | Few words about the author. Single paragraph, without break-lines.
+| biographyFull   | text     | NO       | Describe with more details the biography. Single paragraph, without break-lines.
+
+#### Default Thumbnail
+
+| Field Name      | Type     | Required | Details
+| :-------        | :----    | :---     |:---
+| content         | url      | YES      | Image that represents the provider, like a logo or a symbol. <br> **File type:** JPG or PNG with 640px x 360px resolution.
+
+#### Tags
+
+This node allows as many nodes as needed, just define ``<tag>`` for each content.
+
+| Field Name | Type  | Required | Details
+| :-------   | :---- | :---     |:---
+| tag        | text  | YES      | Metadata on a piece of content. A tag is a term that describes the content, by calling out related topics and synonyms for terms in the content title, for example. Content can have a wide set of tags.
+
+#### Themes
+
+This node allows as many nodes as needed, just define ``<theme>`` for each learning resource.
+
+| Field Name | Type  | Required | Details
+| :-------   | :---- | :---     |:---
+| theme      | text  | YES      | This element can be used for a more detailed categorization using character ">". Eg: Main Theme > SubTheme > ...<br/> Metadata on a piece of content. A theme is one term that tries to summarize the content as a whole or call out the one topic that the content is about. Usually content does not have a lot of themes, mostly one, sometimes 2.
+
+#### Video Subtitles
+
+This node allows as many nodes as needed, just define ``<videoSubtitle>`` for each learning resource. Multiple language subtitles can be included.
+
+| Field Name    | Type  | Required | Details
+| :-------      | :---- | :---     |:---
+| videoSubtitle | text  | YES      | Format: *SRT* or *VTT*.
+
+How to send my metadata and my content
 --------------------------
 
-We will provide you with an SFTP server where you will send the content and the metadata files.
+For uploading your content and metadata files, please request your CrossKnowledge contact. We can then decide to provide you with an SFTP server for you to use for uploading the files.
 
 ### Naming Scheme
 
 #### Catalog
+
 The catalog should be created with the date of the creation in the name following this convention:
 
-	catalog-YYYYmmddHHMMSS.xml
+ catalog-YYYYmmddHHMMSS.xml
 
-Example : catalog-20160403132400.xml for a catalog created on the 3rd of April 2016, at 1:24:00 pm. The hours need to be in the 24h format.
-	
+**Example:** *catalog-20190321150659.xml* for a catalog created on the March 21th 2019 at 15:06:59.
+
 Our system will process the files and put them in a backup directory afterwards.
 
 #### Reference to the content
 
-The references in the XML file can be either absolute (http://domain/path/to/file.png) or relative to the position of the catalog file. If you have an directory structure like this
-	FTP/
-		- catalog-20160403132400.xml
-		- Scorm/
-			- first_course.zip
-			- second_course.zip
-		- Img/
-			- course_1_thumb.jpg
-			- course_2_thumb.jpg
+The references in the XML file should be relative to the position of the catalog.
 
-Then your catalog should look like that:
-```xml
-	...
-	<content>
-		<title>Course 1 title here</title>
-		<thumbnail>Img/course_1_thumb.jpg</thumbnail>
-		<url>Scorm/first_course.zip</url>
-		...
-	</content>
-	<content>
-		<title>Title of the Second course</title>
-		<thumbnail>Img/course_2_thumb.jpg</thumbnail>
-		<url>Scorm/second_course.zip</url>
-		...
-	</content>
-	...
+If you have an directory structure like this
+
+```
+FTP/
+    - catalog-20191104132400.xml
+    - SCORM/
+        - first_course.zip
+        - second_course.zip
+    - Img/
+        - course_1_thumbnail.jpg
+        - course_2_thumbnail.jpg
 ```
 
-It's recommended to use simplify the name of the assets to use only basic characters:
-	[a-zA-Z0-9_\-\.]
+Then your catalog should look like that:
 
-How do I test my catalog.xml ?
-------------------------------
+```xml
+ ...
+ <content>
+  <title>Course 1 title here</title>
+  <thumbnail>Img/course_1_thumbnail.jpg</thumbnail>
+  <url>SCORM/first_course.zip</url>
+  ...
+ </content>
+ <content>
+  <title>Title of the Second course</title>
+  <thumbnail>Img/course_2_thumbnail.jpg</thumbnail>
+  <url>SCORM/second_course.zip</url>
+  ...
+ </content>
+ ...
+```
 
-We've included a simple python tool to test that
+It's recommended to simplify the name of the assets to use only basic characters:
+ [a-zA-Z0-9_\-\.]
 
-### Requirements
+Alternatively, an absolute URL (<http://domain/path/to/file.png>) can be provided for the following fields:
 
-To use our tool you need to make sure that you have python-lxml installed:
+* Provider Picture
+* Provider Thumbnail
+* Content Url
+* Content Thumbnail
+* Author Thumbnail
+
+**NOTE**: The URLs that specify images and documents will be downloaded and will not be requested anymore.
+If you need to update this content, please update the URL and import again.
+
+#### Supported Language codes
+
+Our content management system support the following language codes:
+
+> af-ZA am-ET ar-AE ar-BH ar-DZ ar-EG ar-IQ ar-JO ar-KW ar-LB ar-LY ar-MA ar-OM ar-QA ar-SA ar-SY ar-TN ar-YE as-IN ba-RU be-BY bg-BG bn-BD bn-IN bo-CN br-FR ca-ES co-FR cs-CZ cy-GB da-DK de-AT de-CH de-DE de-LI de-LU dv-MV el-GR en-AU en-BZ en-CA en-GB en-IE en-IN en-JM en-MY en-NZ en-PH en-SG en-TT en-US en-ZA en-ZW es-AR es-BO es-CL es-CO es-CR es-DO es-EC es-ES es-GT es-HN es-MX es-NI es-PA es-PE es-PR es-PY es-SV es-US es-UY es-VE et-EE eu-ES fa-IR fi-FI fo-FO fr-BE fr-CA fr-CH fr-FR fr-LU fr-MC fy-NL ga-IE gd-GB gl-ES gu-IN he-IL hi-IN hr-BA hr-HR hu-HU hy-AM id-ID ig-NG ii-CN is-IS it-CH it-IT ja-JP ka-GE kk-KZ kl-GL km-KH kn-IN ko-KR ky-KG lb-LU lo-LA lt-LT lv-LV mi-NZ mk-MK ml-IN mn-MN mr-IN ms-BN ms-MY mt-MT nb-NO ne-NP nl-BE nl-NL nn-NO oc-FR or-IN pa-IN pl-PL ps-AF pt-BR pt-PT rm-CH ro-RO ru-RU rw-RW sa-IN se-FI se-NO se-SE si-LK sk-SK sl-SI sq-AL sv-FI sv-SE sw-KE ta-IN te-IN th-TH tk-TM tn-ZA tr-TR tt-RU ug-CN uk-UA ur-PK vi-VN wo-SN xh-ZA yo-NG zh-CN zh-HK zh-MO zh-SG zh-TW zu-ZA
+
+How to test my catalog.xml
+--------------------------
+
+This repository contains a simple python 2 tool to test it.
+
+To use our tool you need to make sure that you have python-lxml installed. You can install using the following command:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### Check my catalog
-
 Once you have the requirements installed you can check your datafeed like this:
+
 ```bash
 python ./check.py my_catalog.xml
 ```
-
-
-
